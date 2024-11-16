@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/retina/static/css/main.19cbe40c.css",
+    "main.js": "/retina/static/js/main.44d6549b.js",
+    "static/js/529.40589349.chunk.js": "/retina/static/js/529.40589349.chunk.js",
+    "index.html": "/retina/index.html",
+    "main.19cbe40c.css.map": "/retina/static/css/main.19cbe40c.css.map",
+    "main.44d6549b.js.map": "/retina/static/js/main.44d6549b.js.map",
+    "529.40589349.chunk.js.map": "/retina/static/js/529.40589349.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19cbe40c.css",
+    "static/js/main.44d6549b.js"
+  ]
+}
