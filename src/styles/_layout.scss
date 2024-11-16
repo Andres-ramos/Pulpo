@@ -1,0 +1,43 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    background: white;
+
+    max-width: 100vw;
+    min-height: 100vh;
+
+    main {
+      flex-grow: 1;
+    }
+  }
+
+  #toasts-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: $zindex-tooltip;
+
+    .toast {
+      max-width: calc(100vw - 1rem);
+    }
+  }
+}
+
+.modal {
+  display: block;
+
+  .modal-backdrop {
+    opacity: 0.1;
+    z-index: $zindex-modal-backdrop;
+  }
+  .modal-content {
+    z-index: $zindex-modal;
+  }
+  .modal-body {
+    @extend .custom-scrollbar;
+  }
+}
