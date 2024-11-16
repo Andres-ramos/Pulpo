@@ -14,7 +14,6 @@ import EditorBlock from "./EditorBlock";
 import { GraphContext } from "../lib/context";
 import SelectedNodePanel from "./SelectedNodePanel";
 import ReadabilityBlock from "./ReadabilityBlock";
-import Footer from "../components/Footer";
 
 const LeftPanel: FC = () => {
   const { navState, embedMode, data, panel, setPanel, openModal } = useContext(GraphContext);

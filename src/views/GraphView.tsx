@@ -6,17 +6,13 @@ import Sigma from "sigma";
 import { Dimensions } from "sigma/types";
 import { SigmaContainer } from "@react-sigma/core";
 
-import { Data, loadGraphFile, enrichData, loadGraphURL, readGraph, prepareGraph } from "../lib/data";
+import { Data, loadGraphFile, enrichData, readGraph, prepareGraph } from "../lib/data";
 import GraphControls from "./GraphControls";
 import { LoaderFill } from "../components/Loader";
 import {
   BAD_FILE,
   BAD_URL,
-  UNKNOWN,
-  MISSING_FILE,
-  MISSING_URL,
   getErrorMessage,
-  getReportNotification,
 } from "../lib/errors";
 import { cleanNavState, guessNavState, NavState, navStateToQueryURL, queryURLToNavState } from "../lib/navState";
 import {
@@ -43,8 +39,6 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const [ready, setReady] = useState(true); // set default value as `!embed` to get an overlay
 
   const state = location.state as { file?: unknown; fromHome?: unknown } | undefined;
-  const localFile = useMemo(() => (state?.file instanceof File ? state.file : null), [state]);
-  const fromHome = useMemo(() => !!state?.fromHome, [state]);
 
   const domRoot = useRef<HTMLElement>(null);
   const [sigma, setSigma] = useState<Sigma | undefined>(undefined);

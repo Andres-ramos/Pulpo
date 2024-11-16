@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useRegisterEvents } from "@react-sigma/core";
 
 import { GraphContext } from "../lib/context";
