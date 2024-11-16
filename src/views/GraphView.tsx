@@ -38,7 +38,6 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const location = useLocation();
   const [ready, setReady] = useState(true); // set default value as `!embed` to get an overlay
 
-  const state = location.state as { file?: unknown; fromHome?: unknown } | undefined;
 
   const domRoot = useRef<HTMLElement>(null);
   const [sigma, setSigma] = useState<Sigma | undefined>(undefined);

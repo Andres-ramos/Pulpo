@@ -5,7 +5,7 @@ import { GraphContext } from "../lib/context";
 // import { Props } from "react-select";
 
 
-const EventsController = ({}) => {
+const EventsController = () => {
   const { setHovered, navState, setNavState } = useContext(GraphContext);
   const registerEvents = useRegisterEvents();
 
