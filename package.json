@@ -4,7 +4,8 @@
   "homepage": "https://ouestware.gitlab.io/retina",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build --base=./",
+    "preview": "vite preview",
     "test": "vitest",
     "clean": "prettier --write src",
     "lint": "eslint --ext ts,tsx src"

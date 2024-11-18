@@ -17,7 +17,7 @@ const Root: FC = () => {
           {/* <Route path="/" element={<HomeView />} /> */}
           {/* <Route path="/embed" element={<GraphView embed />} /> */}
           <Route path="/" element={<GraphView />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </HashRouter>
       {/* <Notifications /> */}

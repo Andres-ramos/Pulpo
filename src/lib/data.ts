@@ -151,7 +151,11 @@ export async function loadGraphURL(path: string): Promise<{ name: string; extens
 export async function loadGraphFile(): Promise<{ name: string; extension: string; textContent: string }> {
   const name = "./graph.graphml";
   const extension = (name.split(".").pop() || "").toLowerCase();
-  const response = await fetch("public/graph.graphml")
+  const response = await fetch("/graph.graphml", {
+    headers: {
+      "Content-Type": "text/xml",
+    },
+  })
   const textContent = await response.text();
   return { name, extension, textContent };
 }
