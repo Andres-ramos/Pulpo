@@ -1,6 +1,6 @@
+import cx from "classnames";
 import { FC } from "react";
 import { createPortal } from "react-dom";
-import cx from "classnames";
 
 import { AppContext } from "../lib/context";
 

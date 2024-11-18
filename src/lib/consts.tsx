@@ -1,9 +1,12 @@
-import RAW_PALETTES from "iwanthue/precomputed/k-means-fancy-light";
-import { Props as LinkifyProps } from "react-linkify";
-import React from "react";
+import { createNodeBorderProgram } from "@sigma/node-border";
 import { Attributes } from "graphology-types";
+import RAW_PALETTES from "iwanthue/precomputed/k-means-fancy-light";
+import React from "react";
+import { Props as LinkifyProps } from "react-linkify";
+import { NodeCircleProgram } from "sigma/rendering";
+import { Settings } from "sigma/settings";
 
-export const SAMPLE_DATASET_URI = process.env.PUBLIC_URL + "/dataset.gexf";
+export const SAMPLE_DATASET_URI = import.meta.env.BASE_URL + "dataset.gexf";
 
 // Palettes:
 export const PALETTES = RAW_PALETTES as Record<number, string[]>;
@@ -48,6 +51,24 @@ export const LABEL_THRESHOLD_STEP = 0.001;
 
 export const ANIMATION_DURATION = 400;
 export const MAX_OPTIONS = 50;
+
+export const BASE_SIGMA_SETTINGS: Partial<Settings> = {
+  labelFont: '"Public Sans", sans-serif',
+  allowInvalidContainer: true,
+  zIndex: true,
+  nodeReducer: hiddenReducer,
+  edgeReducer: hiddenReducer,
+  defaultNodeType: "circle",
+  nodeProgramClasses: {
+    circle: NodeCircleProgram,
+    bordered: createNodeBorderProgram({
+      borders: [
+        { size: { value: 0.2 }, color: { attribute: "borderColor" } },
+        { size: { fill: true }, color: { attribute: "color" } },
+      ],
+    }),
+  },
+};
 
 // Data indexation:
 export const RESERVED_FIELDS = new Set(["label", "size", "color", "x", "y", "z"]);

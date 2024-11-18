@@ -1,11 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
 
-import Root from "./views/Root";
-
-import "./styles/index.scss";
 import { AppContext } from "./lib/context";
+import "./styles/index.scss";
+import Root from "./views/Root";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -14,8 +12,3 @@ createRoot(document.getElementById("root") as HTMLElement).render(
     </AppContext.Provider>
   </React.StrictMode>,
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

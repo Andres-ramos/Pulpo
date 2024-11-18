@@ -1,11 +1,11 @@
 import { noop } from "lodash";
 import React, { FC, useContext, useState } from "react";
-import { FiCopy } from "react-icons/fi";
 import { AiOutlineCheckCircle, AiOutlineCloudUpload } from "react-icons/ai";
+import { FiCopy } from "react-icons/fi";
 
 import Modal from "../../components/Modal";
-import { useNotifications } from "../../lib/notifications";
 import { GraphContext } from "../../lib/context";
+import { useNotifications } from "../../lib/notifications";
 
 const PublishModal: FC<{ close: () => void }> = ({ close }) => {
   const { notify } = useNotifications();

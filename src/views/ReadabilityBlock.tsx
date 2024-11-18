@@ -1,11 +1,10 @@
+import cx from "classnames";
 import { isEqual } from "lodash";
+import Slider, { SliderProps } from "rc-slider";
 import React, { FC, useContext, useState } from "react";
 import { FaTimes, FaUndo } from "react-icons/fa";
-import Slider, { SliderProps } from "rc-slider";
-import { GoSettings } from "react-icons/go";
-import cx from "classnames";
+import { GiSettingsKnobs } from "react-icons/gi";
 
-import { GraphContext } from "../lib/context";
 import {
   DEFAULT_EDGE_SIZE_RATIO,
   DEFAULT_LABEL_SIZE,
@@ -23,6 +22,7 @@ import {
   RANGE_STYLE,
   SLIDER_STYLE,
 } from "../lib/consts";
+import { GraphContext } from "../lib/context";
 import { NavState } from "../lib/navState";
 
 const ReadabilityBlock: FC = () => {
@@ -42,7 +42,7 @@ const ReadabilityBlock: FC = () => {
   return (
     <div className="readability-block block">
       <h1 className="fs-4 mt-4">
-        <GoSettings /> Readability settings
+        <GiSettingsKnobs /> Readability settings
       </h1>
 
       <br />

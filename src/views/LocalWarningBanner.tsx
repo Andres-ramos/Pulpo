@@ -2,8 +2,8 @@ import React, { FC, useContext } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
 
 import { GraphContext } from "../lib/context";
-import { useBlocker } from "../utils/useBlocker";
 import { queryURLToNavState } from "../lib/navState";
+import { useBlocker } from "../utils/useBlocker";
 
 const LocalWarningBanner: FC = () => {
   const { navState, openModal } = useContext(GraphContext);

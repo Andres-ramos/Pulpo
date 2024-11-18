@@ -1,10 +1,10 @@
+import cx from "classnames";
 import React, { FC, useContext } from "react";
 import { Link } from "react-router-dom";
-import cx from "classnames";
 
 import { GraphContext } from "../lib/context";
-import { navStateToQueryURL } from "../lib/navState";
 import { NodeData } from "../lib/data";
+import { navStateToQueryURL } from "../lib/navState";
 
 const Node: FC<{
   node: string;

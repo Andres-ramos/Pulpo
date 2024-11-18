@@ -1,8 +1,8 @@
-import { isNil, omitBy, groupBy, map, uniq, keyBy, clamp } from "lodash";
+import { clamp, groupBy, isNil, keyBy, map, omitBy, uniq } from "lodash";
 
-import { Data, FieldType, QualiField, Report } from "./data";
-import { queryStringToRecord, urlSearchParamsToString } from "../utils/url";
 import { arrayify } from "../utils/array";
+import { normalize } from "../utils/string";
+import { queryStringToRecord, urlSearchParamsToString } from "../utils/url";
 import {
   DEFAULT_EDGE_SIZE_RATIO,
   DEFAULT_LABEL_SIZE,
@@ -17,7 +17,7 @@ import {
   MIN_LABEL_THRESHOLD,
   MIN_NODE_SIZE_RATIO,
 } from "./consts";
-import { normalize } from "../utils/string";
+import { Data, FieldType, QualiField, Report } from "./data";
 
 export interface SearchFilter {
   type: "search";
@@ -48,19 +48,19 @@ export const FILTER_FIELD_TYPES: Record<FilterType, FieldType> = {
 // Stand for "edit", "explore" or "view"
 export const ROLES = ["d", "x", "v"] as const;
 export const ROLES_SET: Set<string> = new Set(ROLES);
-export type Role = typeof ROLES[number];
+export type Role = (typeof ROLES)[number];
 export const DEFAULT_ROLE: Role = "x";
 
 // Stand for "source", "target", "original" or "constant"
 export const EDGE_COLORING_MODES = ["c", "o", "s", "t"] as const;
 export const EDGE_COLORING_MODES_SET: Set<string> = new Set(EDGE_COLORING_MODES);
-export type EdgeColoring = typeof EDGE_COLORING_MODES[number];
+export type EdgeColoring = (typeof EDGE_COLORING_MODES)[number];
 export const DEFAULT_EDGE_COLORING: EdgeColoring = "c";
 
 // Stand for "original", "directed" or "undirected"
 export const EDGE_DIRECTION_MODES = ["o", "d", "u"] as const;
 export const EDGE_DIRECTION_MODES_SET: Set<string> = new Set(EDGE_DIRECTION_MODES);
-export type EdgeDirection = typeof EDGE_DIRECTION_MODES[number];
+export type EdgeDirection = (typeof EDGE_DIRECTION_MODES)[number];
 export const DEFAULT_EDGE_DIRECTION: EdgeDirection = "o";
 
 export interface NavState {

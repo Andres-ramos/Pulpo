@@ -1,12 +1,12 @@
 import { keyBy, pull, uniqBy } from "lodash";
 import React, { FC, useContext, useMemo } from "react";
-import Select from "react-select";
-import { RiFilterFill } from "react-icons/ri";
-import { MdBubbleChart } from "react-icons/md";
 import { BsGearFill, BsPaletteFill, BsShare } from "react-icons/bs";
+import { MdBubbleChart } from "react-icons/md";
+import { RiFilterFill } from "react-icons/ri";
+import Select from "react-select";
 
-import { AppContext, GraphContext } from "../lib/context";
 import { DEFAULT_SELECT_PROPS } from "../lib/consts";
+import { AppContext, GraphContext } from "../lib/context";
 import {
   DEFAULT_EDGE_COLORING,
   DEFAULT_EDGE_DIRECTION,
@@ -148,7 +148,7 @@ const EditorBlock: FC = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="table-group-divider">
             {fields.map((f) => {
               const field = fieldsIndex[f];
 

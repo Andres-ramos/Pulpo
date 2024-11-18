@@ -1,16 +1,16 @@
-import { createContext } from "react";
-import { noop } from "lodash";
 import Graph from "graphology";
+import { noop } from "lodash";
+import { createContext } from "react";
 import Sigma from "sigma";
 
+import { ModalName } from "../views/modals";
+import { ComputedData, getEmptyComputedData } from "./computedData";
 import { Data } from "./data";
 import { NavState } from "./navState";
-import { ComputedData, getEmptyComputedData } from "./computedData";
-import { ModalName } from "../views/modals";
 
 export const PANELS = ["edit", "main", "readability"] as const;
 export const PANELS_SET: Set<string> = new Set(PANELS);
-export type Panel = typeof PANELS[number];
+export type Panel = (typeof PANELS)[number];
 
 export const AppContext = createContext<{ portalTarget: HTMLDivElement }>({
   portalTarget: document.createElement("div"),

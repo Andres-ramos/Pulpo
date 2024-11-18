@@ -1,5 +1,5 @@
-import { FC, useCallback, useState } from "react";
 import cx from "classnames";
+import { FC, useCallback, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { NotificationInput, useNotifications } from "../lib/notifications";

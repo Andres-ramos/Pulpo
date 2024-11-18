@@ -1,19 +1,20 @@
+import cx from "classnames";
 import React, { FC, useContext, useMemo } from "react";
-import { MdOutlinePreview } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
-import { GoSettings } from "react-icons/go";
 import { BsShare } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
+import { GiSettingsKnobs } from "react-icons/gi";
+import { MdOutlinePreview } from "react-icons/md";
 import { Link } from "react-router-dom";
-import cx from "classnames";
 
+import Footer from "../components/Footer";
+import { GraphContext } from "../lib/context";
+import EditorBlock from "./EditorBlock";
 import Filters from "./Filters";
 import GraphSumUp from "./GraphSumUp";
 import NodesAppearanceBlock from "./NodesAppearanceBlock";
-import EditorBlock from "./EditorBlock";
-import { GraphContext } from "../lib/context";
-import SelectedNodePanel from "./SelectedNodePanel";
 import ReadabilityBlock from "./ReadabilityBlock";
+import SelectedNodePanel from "./SelectedNodePanel";
 
 const LeftPanel: FC = () => {
   const { navState, embedMode, data, panel, setPanel, openModal } = useContext(GraphContext);
@@ -75,7 +76,7 @@ const LeftPanel: FC = () => {
               disabled={panel === "readability"}
               title="Edit readability settings"
             >
-              <GoSettings />
+              <GiSettingsKnobs />
             </button>
           </span>
           <span className="text-nowrap">

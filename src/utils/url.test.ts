@@ -1,13 +1,15 @@
+import { describe, expect, test } from "vitest";
+
 import { buildURLSearchParams, queryStringToRecord, urlSearchParamsToString } from "./url";
 
 describe("URL utils", () => {
   describe("#buildURLSearchParams", () => {
-    it("should work 'normally' with normal single values cases", () => {
+    test("should work 'normally' with normal single values cases", () => {
       const data = { a: "abc", b: "def" };
       expect(buildURLSearchParams(data).toString()).toStrictEqual(new URLSearchParams(data).toString());
     });
 
-    it("should encode arrays using [] suffix", () => {
+    test("should encode arrays using [] suffix", () => {
       const data = { a: "abc", b: ["def", "ghi"] };
       const params = buildURLSearchParams(data);
       expect([...params.getAll("a")]).toStrictEqual(["abc"]);
@@ -16,14 +18,14 @@ describe("URL utils", () => {
   });
 
   describe("#urlSearchParamsToString", () => {
-    it("should work 'normally' with normal single values cases", () => {
+    test("should work 'normally' with normal single values cases", () => {
       const params = new URLSearchParams();
       params.append("a", "abc");
       params.append("b", "def");
       expect(urlSearchParamsToString(params)).toBe(params.toString());
     });
 
-    it("should detect arrays", () => {
+    test("should detect arrays", () => {
       const params = new URLSearchParams();
       params.append("a", "abc");
       params.append("b", "def");
@@ -33,15 +35,15 @@ describe("URL utils", () => {
   });
 
   describe("#queryStringToRecord", () => {
-    it("should work 'normally' with normal single values cases", () => {
+    test("should work 'normally' with normal single values cases", () => {
       expect(queryStringToRecord("a=abc&b=def")).toStrictEqual({ a: "abc", b: "def" });
     });
 
-    it("should detect arrays", () => {
+    test("should detect arrays", () => {
       expect(queryStringToRecord("a=abc&b[]=def&b[]=ghi")).toStrictEqual({ a: "abc", b: ["def", "ghi"] });
     });
 
-    it("should be flexible about the `[]` suffix", () => {
+    test("should be flexible about the `[]` suffix", () => {
       expect(queryStringToRecord("a=abc")).toStrictEqual({ a: "abc" });
       expect(queryStringToRecord("a[]=abc")).toStrictEqual({ a: "abc" });
       expect(queryStringToRecord("a=abc&a=def")).toStrictEqual({ a: ["abc", "def"] });

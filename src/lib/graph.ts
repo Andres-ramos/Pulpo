@@ -1,10 +1,8 @@
-import { Settings } from "sigma/settings";
+import chroma from "chroma-js";
 import { Attributes } from "graphology-types";
 import { isNil, isSet, memoize } from "lodash";
-import chroma from "chroma-js";
+import { Settings } from "sigma/settings";
 
-import { Data, EdgeData, getValue, NodeData } from "./data";
-import { NavState } from "./navState";
 import { ComputedData } from "./computedData";
 import {
   DEFAULT_EDGE_COLOR,
@@ -15,6 +13,8 @@ import {
   HIGHLIGHTED_EDGE_SIZE_RATIO,
   HIGHLIGHTED_NODE_COLOR,
 } from "./consts";
+import { Data, EdgeData, NodeData, getValue } from "./data";
+import { NavState } from "./navState";
 
 const getLighterColor = memoize((color: string): string => {
   return chroma.average([color, HIDDEN_NODE_COLOR], "lab").hex();
@@ -191,8 +191,9 @@ export function getReducers(
       let noLabel = false;
 
       if (emphasizedNodesSet.has(node)) {
-        res.insideColor = data.color;
-        res.color = HIGHLIGHTED_NODE_COLOR;
+        res.color = data.color;
+        res.borderColor = HIGHLIGHTED_NODE_COLOR;
+        res.type = "bordered";
         res.zIndex = 1000;
         noLabel = false;
       } else if (filteredNodes && !filteredNodes.has(node)) {

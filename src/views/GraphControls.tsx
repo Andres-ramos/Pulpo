@@ -1,20 +1,20 @@
-import React, { FC, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { OptionProps } from "react-select";
-import AsyncSelect from "react-select/async";
+import { useSigma } from "@react-sigma/core";
+import { downloadAsPNG } from "@sigma/export-image";
 import cx from "classnames";
 import { keyBy, take } from "lodash";
-import { Coordinates } from "sigma/types";
-import { useSigma } from "@react-sigma/core";
-import { FaFileImage } from "react-icons/fa";
+import React, { FC, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { BiRadioCircleMarked } from "react-icons/bi";
-import { BsZoomIn, BsZoomOut, BsSearch } from "react-icons/bs";
+import { BsSearch, BsZoomIn, BsZoomOut } from "react-icons/bs";
+import { FaFileImage } from "react-icons/fa";
+import { OptionProps } from "react-select";
+import AsyncSelect from "react-select/async";
+import { Coordinates } from "sigma/types";
 
-import saveAsImage from "../utils/sigma.saveAsImage";
-import { normalize, slugify } from "../utils/string";
+import Node from "../components/Node";
 import { ANIMATION_DURATION, DEFAULT_SELECT_PROPS, MAX_OPTIONS, RETINA_FIELD_PREFIX } from "../lib/consts";
 import { AppContext, GraphContext } from "../lib/context";
 import { NodeData } from "../lib/data";
-import Node from "../components/Node";
+import { normalize, slugify } from "../utils/string";
 import GraphFullScreenControl from "./GraphFullScreenControl";
 
 const TYPE_NODE = "node" as const;
@@ -192,7 +192,10 @@ const GraphControls: FC = () => {
 
   const downloadImage = useCallback(() => {
     const slug = slugify(graph.getAttribute("title") || "graph");
-    saveAsImage(sigma, `${slug}.png`);
+    downloadAsPNG(sigma, {
+      fileName: slug,
+      backgroundColor: "white",
+    });
   }, [graph, sigma]);
 
   return (

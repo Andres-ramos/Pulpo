@@ -1,11 +1,11 @@
-import React, { FC, useContext, useMemo } from "react";
 import cx from "classnames";
-import Select from "react-select";
+import React, { FC, useContext, useMemo } from "react";
 import { BsPaletteFill } from "react-icons/bs";
 import { MdBubbleChart } from "react-icons/md";
+import Select from "react-select";
 
-import { AppContext, GraphContext } from "../lib/context";
 import { DEFAULT_SELECT_PROPS } from "../lib/consts";
+import { AppContext, GraphContext } from "../lib/context";
 
 interface Option {
   value: string;

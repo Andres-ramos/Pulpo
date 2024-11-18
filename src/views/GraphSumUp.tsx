@@ -1,16 +1,16 @@
 import { map, startCase } from "lodash";
 import React, { FC, useCallback, useContext, useMemo } from "react";
-import { MdOutlineOpenInNew } from "react-icons/md";
-import { RiFilterOffFill } from "react-icons/ri";
 import { BiNetworkChart } from "react-icons/bi";
 import { FaFileDownload } from "react-icons/fa";
+import { MdOutlineOpenInNew } from "react-icons/md";
+import { RiFilterOffFill } from "react-icons/ri";
 import Linkify from "react-linkify";
 
-import { GraphContext } from "../lib/context";
-import { saveFileFromURL } from "../utils/file";
-import { cleanNavState, navStateToQueryURL } from "../lib/navState";
-import { Data } from "../lib/data";
 import { DEFAULT_LINKIFY_PROPS } from "../lib/consts";
+import { GraphContext } from "../lib/context";
+import { Data } from "../lib/data";
+import { cleanNavState, navStateToQueryURL } from "../lib/navState";
+import { saveFileFromURL } from "../utils/file";
 
 const GraphSumUp: FC = () => {
   const { origin, pathname } = window.location;

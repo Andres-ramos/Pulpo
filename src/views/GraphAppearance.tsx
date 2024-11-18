@@ -1,6 +1,10 @@
-import React, { FC, useContext, useEffect, useState } from "react";
 import { useSigma } from "@react-sigma/core";
+import { isEmpty } from "lodash";
+import React, { FC, useContext, useEffect, useState } from "react";
+import { DEFAULT_SETTINGS } from "sigma/settings";
 
+import { LoaderFill } from "../components/Loader";
+import { DEFAULT_LABEL_THRESHOLD } from "../lib/consts";
 import { GraphContext } from "../lib/context";
 import {
   applyEdgeColors,
@@ -12,11 +16,8 @@ import {
   applyNodeSubtitles,
   getReducers,
 } from "../lib/graph";
-import { DEFAULT_SETTINGS } from "sigma/settings";
-import { inputToStateThreshold } from "../utils/threshold";
-import { DEFAULT_LABEL_THRESHOLD } from "../lib/consts";
-import { LoaderFill } from "../components/Loader";
 import drawLabel, { drawHover } from "../utils/canvas";
+import { inputToStateThreshold } from "../utils/threshold";
 
 const GraphAppearance: FC = () => {
   const { data, navState, computedData, setSigma, hovered } = useContext(GraphContext);
@@ -37,10 +38,10 @@ const GraphAppearance: FC = () => {
 
   useEffect(() => {
     setSigma(sigma);
-    sigma.setSetting("labelRenderer", (context, data, settings) =>
+    sigma.setSetting("defaultDrawNodeLabel", (context, data, settings) =>
       drawLabel(context, { ...sigma.getNodeDisplayData(data.key), ...data }, settings),
     );
-    sigma.setSetting("hoverRenderer", (context, data, settings) =>
+    sigma.setSetting("defaultDrawNodeHover", (context, data, settings) =>
       drawHover(context, { ...sigma.getNodeDisplayData(data.key), ...data }, settings),
     );
 
@@ -49,18 +50,15 @@ const GraphAppearance: FC = () => {
 
   useEffect(() => {
     const { node, edge } = getReducers(data, navState, computedData, hovered);
-      sigma.setSetting("nodeReducer", node);
-      sigma.setSetting("edgeReducer", edge);
-      sigma.refresh();
-      setIsRendered(true);
-        
+    sigma.setSetting("nodeReducer", node);
+    sigma.setSetting("edgeReducer", edge);
+    setIsRendered(true);
   }, [data, navState, computedData, hovered, sigma]);
 
   useEffect(() => {
     const labelDensity = labelThreshold === 0 ? Infinity : DEFAULT_SETTINGS.labelDensity;
     sigma.setSetting("labelRenderedSizeThreshold", labelThreshold);
     sigma.setSetting("labelDensity", labelDensity);
-    sigma.refresh();
   }, [labelThreshold, sigma]);
 
   useEffect(() => {

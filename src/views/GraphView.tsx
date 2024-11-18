@@ -1,43 +1,52 @@
+import { SigmaContainer } from "@react-sigma/core";
 import cx from "classnames";
-import { useLocation, useNavigate } from "react-router";
-import React, { createElement, FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { FC, createElement, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
+import { useLocation, useNavigate } from "react-router";
 import Sigma from "sigma";
 import { Dimensions } from "sigma/types";
-import { SigmaContainer } from "@react-sigma/core";
-
-import { Data, loadGraphFile, enrichData, readGraph, prepareGraph } from "../lib/data";
 import GraphControls from "./GraphControls";
+
 import { LoaderFill } from "../components/Loader";
+import {
+  ComputedData,
+  getEdgeSizes,
+  getEmptyComputedData,
+  getMetrics,
+  getNodeColors,
+  getNodeSizes,
+} from "../lib/computedData";
+import { BASE_SIGMA_SETTINGS } from "../lib/consts";
+import { GraphContext, Panel } from "../lib/context";
+import { Data, enrichData, loadGraphFile, loadGraphURL, prepareGraph, readGraph } from "../lib/data";
 import {
   BAD_FILE,
   BAD_URL,
+  MISSING_FILE,
+  MISSING_URL,
+  UNKNOWN,
   getErrorMessage,
+  getReportNotification,
 } from "../lib/errors";
-import { cleanNavState, guessNavState, NavState, navStateToQueryURL, queryURLToNavState } from "../lib/navState";
-import {
-  ComputedData,
-  getNodeColors,
-  getMetrics,
-  getNodeSizes,
-  getEmptyComputedData,
-  getEdgeSizes,
-} from "../lib/computedData";
-import NodeSizeCaption from "./NodeSizeCaption";
-import LeftPanel from "./LeftPanel";
-import { GraphContext, Panel } from "../lib/context";
+// import { applyGraphStyle } from "../lib/graph";
+import { NavState, cleanNavState, guessNavState, navStateToQueryURL, queryURLToNavState } from "../lib/navState";
 import EventsController from "./EventsController";
-import { ModalName, MODALS } from "./modals";
-import BorderedNodeProgram from "../utils/node-renderer/BorderedNodeProgram";
 import GraphAppearance from "./GraphAppearance";
 import { applyGraphStyle } from "../lib/graph";
 import { hiddenReducer } from "../lib/consts";
+import NodeSizeCaption from "./NodeSizeCaption";
+import LeftPanel from "./LeftPanel";
+import { ModalName, MODALS } from "./modals";
+
 
 const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [ready, setReady] = useState(true); // set default value as `!embed` to get an overlay
 
+  const state = location.state as { file?: unknown; fromHome?: unknown } | undefined;
+  const localFile = useMemo(() => (state?.file instanceof File ? state.file : null), [state]);
+  const fromHome = useMemo(() => !!state?.fromHome, [state]);
 
   const domRoot = useRef<HTMLElement>(null);
   const [sigma, setSigma] = useState<Sigma | undefined>(undefined);
@@ -155,7 +164,6 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
 
     // Hardcoded
     promise = loadGraphFile();
-      
     if (promise) {
       promise
         .then(({ name, extension, textContent }) => {
@@ -194,7 +202,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
         onClick={() => setReady(true)}
       >
         <p>
-          <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="Retina logo" style={{ height: "4em" }} />
+          <img src={import.meta.env.BASE_URL + "logo.svg"} alt="Retina logo" style={{ height: "4em" }} />
         </p>
         <p className="fs-3">Click here to see the graph visualization</p>
       </div>
@@ -233,17 +241,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
             <SigmaContainer
               className={cx("sigma-wrapper", !!hovered && "cursor-pointer")}
               graph={data.graph}
-              initialSettings={{
-                labelFont: '"Public Sans", sans-serif',
-                zIndex: true,
-                defaultNodeType: "borderedNode",
-                nodeReducer: hiddenReducer,
-                edgeReducer: hiddenReducer,
-
-                nodeProgramClasses: {
-                  borderedNode: BorderedNodeProgram,
-                },
-              }}
+              settings={BASE_SIGMA_SETTINGS}
             >
               <EventsController/> 
               <GraphAppearance/>

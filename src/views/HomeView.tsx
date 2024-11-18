@@ -1,14 +1,14 @@
-import React, { FC, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
 import cx from "classnames";
+import React, { FC, useEffect, useState } from "react";
 import { AiOutlineCloud } from "react-icons/ai";
 import { RiComputerLine } from "react-icons/ri";
+import { useLocation, useNavigate } from "react-router";
 
-import { useNotifications } from "../lib/notifications";
-import { getErrorMessage } from "../lib/errors";
+import DropInput from "../components/DropInput";
 import Footer from "../components/Footer";
 import { SAMPLE_DATASET_URI } from "../lib/consts";
-import DropInput from "../components/DropInput";
+import { getErrorMessage } from "../lib/errors";
+import { useNotifications } from "../lib/notifications";
 
 const HomeView: FC = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const HomeView: FC = () => {
     <main className="home-view">
       <div className="title-block">
         <div className="text-center">
-          <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="Retina Logo" className="mb-3" />
+          <img src={import.meta.env.BASE_URL + "logo.svg"} alt="Retina Logo" className="mb-3" />
         </div>
         <h1 className="mb-4">
           <span className="position-relative">

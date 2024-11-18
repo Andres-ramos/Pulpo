@@ -1,19 +1,19 @@
-import React, { FC, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import Slider, { SliderProps } from "rc-slider";
+import cx from "classnames";
 import { first, isNumber, keyBy, last, mapValues, max, mean, sortBy, take, uniq } from "lodash";
-import { MdBubbleChart } from "react-icons/md";
-import { RiFilterOffFill } from "react-icons/ri";
-import { FiPlus, FiMinus } from "react-icons/fi";
+import Slider, { SliderProps } from "rc-slider";
+import React, { FC, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import AnimateHeight from "react-animate-height";
 import { BiCheckbox, BiCheckboxChecked, BiCheckboxMinus } from "react-icons/bi";
 import { BsChevronDown, BsChevronUp, BsPaletteFill, BsSearch, BsSortAlphaDown, BsSortDown } from "react-icons/bs";
-import AnimateHeight from "react-animate-height";
-import cx from "classnames";
+import { FiMinus, FiPlus } from "react-icons/fi";
+import { MdBubbleChart } from "react-icons/md";
+import { RiFilterOffFill } from "react-icons/ri";
 
-import { ContentField, getFilterableFields, getValue, QualiField, QuantiField } from "../lib/data";
-import { Filter, RangeFilter, SearchFilter, TermsFilter } from "../lib/navState";
 import { RangeMetric, SearchMetrics, TermsMetric } from "../lib/computedData";
-import { GraphContext } from "../lib/context";
 import { MAX_PALETTE_SIZE, RANGE_STYLE } from "../lib/consts";
+import { GraphContext } from "../lib/context";
+import { ContentField, QualiField, QuantiField, getFilterableFields, getValue } from "../lib/data";
+import { Filter, RangeFilter, SearchFilter, TermsFilter } from "../lib/navState";
 import { getFontColor } from "../utils/color";
 import { shortenNumber } from "../utils/number";
 import { normalize } from "../utils/string";
@@ -118,8 +118,8 @@ const TermsFilterComponent: FC<{
                   state === "idle"
                     ? [v.id]
                     : state === "unchecked"
-                    ? checkedValues.concat(v.id)
-                    : checkedValues.filter((s) => s !== v.id);
+                      ? checkedValues.concat(v.id)
+                      : checkedValues.filter((s) => s !== v.id);
 
                 if (!!newValues.length) {
                   setFilter({

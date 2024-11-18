@@ -1,22 +1,22 @@
 import chroma from "chroma-js";
 import _, { max, min, sortBy } from "lodash";
+import { Dimensions } from "sigma/types";
 
-import { NavState } from "./navState";
 import { findRanges } from "../utils/number";
-import { countRanges, countTerms, Data, filterNodes, getFilterableFields, getValue } from "./data";
 import {
   DEFAULT_NODE_COLOR,
   DEFAULT_NODE_SIZE_RATIO,
-  NODE_DEFAULT_SIZE,
+  EDGE_SIZE_MAX,
+  EDGE_SIZE_MIN,
   GRADIENT,
   MAX_PALETTE_SIZE,
-  PALETTES,
-  EDGE_SIZE_MAX,
-  NODE_SIZE_MIN,
-  EDGE_SIZE_MIN,
+  NODE_DEFAULT_SIZE,
   NODE_SIZE_MAX,
+  NODE_SIZE_MIN,
+  PALETTES,
 } from "./consts";
-import { Dimensions } from "sigma/types";
+import { Data, countRanges, countTerms, filterNodes, getFilterableFields, getValue } from "./data";
+import { NavState } from "./navState";
 
 export interface TermsValue {
   id: string;

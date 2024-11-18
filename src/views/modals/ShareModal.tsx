@@ -1,11 +1,11 @@
 import React, { ChangeEvent, FC, useContext, useMemo, useRef, useState } from "react";
-import { FiCopy } from "react-icons/fi";
 import { BsShare } from "react-icons/bs";
+import { FiCopy } from "react-icons/fi";
 
 import Modal from "../../components/Modal";
 import { GraphContext } from "../../lib/context";
-import { cleanNavState, navStateToQueryURL } from "../../lib/navState";
 import { Data } from "../../lib/data";
+import { cleanNavState, navStateToQueryURL } from "../../lib/navState";
 import { useNotifications } from "../../lib/notifications";
 
 const ShareModal: FC<{ close: () => void }> = ({ close }) => {

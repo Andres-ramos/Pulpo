@@ -1,27 +1,27 @@
 import { MultiGraph } from "graphology";
 import gexf from "graphology-gexf/browser";
 import graphml from "graphology-graphml/browser";
-import { NodeDisplayData } from "sigma/types";
+import forceAtlas2 from "graphology-layout-forceatlas2";
 import noverlap from "graphology-layout-noverlap";
 import circular from "graphology-layout/circular";
-import forceAtlas2 from "graphology-layout-forceatlas2";
 import AbstractGraph from "graphology-types";
 import { constant, flatMap, groupBy, isNil, keyBy, mapValues, max, min, omitBy, uniq } from "lodash";
+import { NodeDisplayData } from "sigma/types";
 
-import { Filter, FILTER_FIELD_TYPES, NavState } from "./navState";
-import { BAD_EXTENSION } from "./errors";
+import { isNumber } from "../utils/number";
 import { minimize, normalize } from "../utils/string";
 import {
   DEFAULT_EDGE_COLOR,
   DEFAULT_NODE_COLOR,
   NODE_DEFAULT_SIZE,
-  removeRetinaPrefix,
   RESERVED_FIELDS,
   RETINA_FIELD_PREFIX,
   RETINA_NUMBER_FIELD_PREFIX,
   RETINA_STRING_FIELD_PREFIX,
+  removeRetinaPrefix,
 } from "./consts";
-import { isNumber } from "../utils/number";
+import { BAD_EXTENSION } from "./errors";
+import { FILTER_FIELD_TYPES, Filter, NavState } from "./navState";
 
 /**
  * Types:
@@ -151,7 +151,7 @@ export async function loadGraphURL(path: string): Promise<{ name: string; extens
 export async function loadGraphFile(): Promise<{ name: string; extension: string; textContent: string }> {
   const name = "./graph.graphml";
   const extension = (name.split(".").pop() || "").toLowerCase();
-  const response = await fetch("retina/graph.graphml")
+  const response = await fetch("public/graph.graphml")
   const textContent = await response.text();
   return { name, extension, textContent };
 }
@@ -332,8 +332,8 @@ export function getFields(graph: RetinaGraph, type: "node" | "edge"): Field[] {
       key.indexOf(RETINA_NUMBER_FIELD_PREFIX) === 0
         ? (["quanti"] as FieldType[])
         : key.indexOf(RETINA_STRING_FIELD_PREFIX) === 0
-        ? (["quali"] as FieldType[])
-        : inferFieldTypes(values, totalRowsCount);
+          ? (["quali"] as FieldType[])
+          : inferFieldTypes(values, totalRowsCount);
 
     return types.map((type) => {
       const id = minimized[key];

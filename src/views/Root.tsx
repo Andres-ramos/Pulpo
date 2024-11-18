@@ -1,8 +1,10 @@
 import React, { FC } from "react";
-import { HashRouter, Navigate, Routes } from "react-router-dom";
 import { Route } from "react-router";
+import { HashRouter, Navigate, Routes } from "react-router-dom";
 
 import GraphView from "./GraphView";
+import HomeView from "./HomeView";
+import Notifications from "./Notifications";
 
 // import graph from "./graph.graphml"
 

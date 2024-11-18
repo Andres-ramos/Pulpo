@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
+
 import { GraphContext } from "../lib/context";
 
-const matomoUrl: string | undefined = process.env.REACT_APP_MATOMO_URL;
-const matomoSiteId: string | undefined = process.env.REACT_APP_MATOMO_SITE_ID;
+const matomoUrl: string | undefined = import.meta.env.MATOMO_URL;
+const matomoSiteId: string | undefined = import.meta.env.MATOMO_SITE_ID;
 
 const Matomo: React.FC = () => {
   const location = useLocation();

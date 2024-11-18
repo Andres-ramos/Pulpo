@@ -1,16 +1,7 @@
 import { MultiGraph } from "graphology";
+import { describe, expect, test } from "vitest";
 
-import {
-  cleanFilter,
-  cleanNavState,
-  DEFAULT_EDGE_COLORING,
-  DEFAULT_EDGE_DIRECTION,
-  DEFAULT_ROLE,
-  Role,
-  navStateToQueryURL,
-  queryURLToNavState,
-} from "./navState";
-import { Data, enrichData, prepareGraph } from "./data";
+import { normalize } from "../utils/string";
 import {
   DEFAULT_LABEL_SIZE,
   DEFAULT_LABEL_THRESHOLD,
@@ -24,7 +15,17 @@ import {
   MIN_LABEL_THRESHOLD,
   MIN_NODE_SIZE_RATIO,
 } from "./consts";
-import { normalize } from "../utils/string";
+import { Data, enrichData, prepareGraph } from "./data";
+import {
+  DEFAULT_EDGE_COLORING,
+  DEFAULT_EDGE_DIRECTION,
+  DEFAULT_ROLE,
+  Role,
+  cleanFilter,
+  cleanNavState,
+  navStateToQueryURL,
+  queryURLToNavState,
+} from "./navState";
 
 function data(): Data {
   const rawGraph = new MultiGraph();
@@ -42,50 +43,50 @@ function data(): Data {
 
 describe("NavState", () => {
   describe("#cleanFilter", () => {
-    it("should do nothing for valid terms filter", () => {
+    test("should do nothing for valid terms filter", () => {
       expect(cleanFilter({ type: "terms", field: "n", values: ["Doe"] }, data())).toStrictEqual({
         type: "terms",
         field: "n",
         values: ["Doe"],
       });
     });
-    it("should remove unexisting values from terms filters", () => {
+    test("should remove unexisting values from terms filters", () => {
       expect(cleanFilter({ type: "terms", field: "n", values: ["Doe", "Obama"] }, data())).toStrictEqual({
         type: "terms",
         field: "n",
         values: ["Doe"],
       });
     });
-    it("should return null if no term value exists", () => {
+    test("should return null if no term value exists", () => {
       expect(cleanFilter({ type: "terms", field: "n", values: ["Obama"] }, data())).toStrictEqual(null);
     });
-    it("should return null if the terms field does not exist", () => {
+    test("should return null if the terms field does not exist", () => {
       expect(cleanFilter({ type: "terms", field: "firstName", values: ["John"] }, data())).toStrictEqual(null);
     });
-    it("should return null if the terms field is not a quali field", () => {
+    test("should return null if the terms field is not a quali field", () => {
       expect(cleanFilter({ type: "terms", field: "a-n", values: ["10"] }, data())).toStrictEqual(null);
     });
 
-    it("should do nothing for valid range filter", () => {
+    test("should do nothing for valid range filter", () => {
       expect(cleanFilter({ type: "range", field: "a-n", min: 10 }, data())).toStrictEqual({
         type: "range",
         field: "a-n",
         min: 10,
       });
     });
-    it("should return null if there is no min nor no max", () => {
+    test("should return null if there is no min nor no max", () => {
       expect(cleanFilter({ type: "range", field: "a-n" }, data())).toStrictEqual(null);
     });
-    it("should return null if the range field does not exist", () => {
+    test("should return null if the range field does not exist", () => {
       expect(cleanFilter({ type: "range", field: "birthYear", max: 1980 }, data())).toStrictEqual(null);
     });
-    it("should return null if the range field is not a quanti field", () => {
+    test("should return null if the range field is not a quanti field", () => {
       expect(cleanFilter({ type: "range", field: "n", max: 123 }, data())).toStrictEqual(null);
     });
   });
 
   describe("#cleanNavState", () => {
-    it("should do nothing for valid nav state", () => {
+    test("should do nothing for valid nav state", () => {
       expect(
         cleanNavState(
           {
@@ -112,121 +113,121 @@ describe("NavState", () => {
       });
     });
 
-    it("should remove `role` if it is not a proper value", () => {
+    test("should remove `role` if it is not a proper value", () => {
       expect(cleanNavState({ role: "woopsy" as Role }, data())).toStrictEqual({});
     });
-    it("should remove `role` if it is the default value", () => {
+    test("should remove `role` if it is the default value", () => {
       expect(cleanNavState({ role: DEFAULT_ROLE }, data())).toStrictEqual({});
     });
-    it("should keep `role` otherwise", () => {
+    test("should keep `role` otherwise", () => {
       expect(cleanNavState({ role: "d" }, data())).toStrictEqual({ role: "d" });
       expect(cleanNavState({ role: "v" }, data())).toStrictEqual({ role: "v" });
     });
 
-    it("should remove `selectedNode` if it does not exist in the graph", () => {
+    test("should remove `selectedNode` if it does not exist in the graph", () => {
       expect(cleanNavState({ selectedNode: "nothing" }, data())).toStrictEqual({});
     });
 
-    it("should keep `subtitleFields` if they are valid", () => {
+    test("should keep `subtitleFields` if they are valid", () => {
       expect(cleanNavState({ subtitleFields: ["a-n"] }, data())).toStrictEqual({ subtitleFields: ["a-n"] });
     });
 
-    it("should remove `subtitleFields` if it does not exist in the graph", () => {
+    test("should remove `subtitleFields` if it does not exist in the graph", () => {
       expect(cleanNavState({ subtitleFields: ["nothing"] }, data())).toStrictEqual({});
     });
 
-    it("should remove `color` if it does not exist in the graph", () => {
+    test("should remove `color` if it does not exist in the graph", () => {
       expect(cleanNavState({ nodeColorField: "nothing" }, data())).toStrictEqual({});
     });
 
-    it("should remove `color` if it is not declared in `colorable`", () => {
+    test("should remove `color` if it is not declared in `colorable`", () => {
       expect(cleanNavState({ nodeColorField: "n", colorable: ["a-n"] }, data())).toStrictEqual({ colorable: ["a-n"] });
     });
 
-    it("should remove `size` if it does not exist in the graph", () => {
+    test("should remove `size` if it does not exist in the graph", () => {
       expect(cleanNavState({ nodeSizeField: "nothing" }, data())).toStrictEqual({});
     });
 
-    it("should remove `size` if it is not declared in `sizeable`", () => {
+    test("should remove `size` if it is not declared in `sizeable`", () => {
       expect(cleanNavState({ nodeSizeField: "a-n", sizeable: ["c-n"] }, data())).toStrictEqual({ sizeable: ["c-n"] });
     });
 
-    it("should remove `size` if it is not a range field", () => {
+    test("should remove `size` if it is not a range field", () => {
       expect(cleanNavState({ nodeSizeField: "n", sizeable: ["n"] }, data())).toStrictEqual({});
     });
 
-    it("should remove empty `filters` array", () => {
+    test("should remove empty `filters` array", () => {
       expect(cleanNavState({ filters: [] }, data())).toStrictEqual({});
     });
 
-    it("should clean `filters` array", () => {
+    test("should clean `filters` array", () => {
       expect(
         cleanNavState({ filters: [{ type: "terms", field: "n", values: ["Doe", "Obama"] }] }, data()),
       ).toStrictEqual({ filters: [{ type: "terms", field: "n", values: ["Doe"] }] });
     });
 
-    it("should remove `nodeSizeRatio` if it is not a proper number", () => {
+    test("should remove `nodeSizeRatio` if it is not a proper number", () => {
       expect(cleanNavState({ nodeSizeRatio: "5" as any }, data())).toStrictEqual({});
     });
-    it("should remove `nodeSizeRatio` if it is the default correction ratio", () => {
+    test("should remove `nodeSizeRatio` if it is the default correction ratio", () => {
       expect(cleanNavState({ nodeSizeRatio: DEFAULT_NODE_SIZE_RATIO }, data())).toStrictEqual({});
     });
-    it("should clamp `nodeSizeRatio` if it is out of the tolerance range", () => {
+    test("should clamp `nodeSizeRatio` if it is out of the tolerance range", () => {
       expect(cleanNavState({ nodeSizeRatio: 0.001 }, data())).toStrictEqual({ nodeSizeRatio: MIN_NODE_SIZE_RATIO });
       expect(cleanNavState({ nodeSizeRatio: 1000 }, data())).toStrictEqual({ nodeSizeRatio: MAX_NODE_SIZE_RATIO });
     });
 
-    it("should remove `edgeSizeRatio` if it is not a proper number", () => {
+    test("should remove `edgeSizeRatio` if it is not a proper number", () => {
       expect(cleanNavState({ edgeSizeRatio: "5" as any }, data())).toStrictEqual({});
     });
-    it("should remove `edgeSizeRatio` if it is the default correction ratio", () => {
+    test("should remove `edgeSizeRatio` if it is the default correction ratio", () => {
       expect(cleanNavState({ edgeSizeRatio: DEFAULT_NODE_SIZE_RATIO }, data())).toStrictEqual({});
     });
-    it("should clamp `edgeSizeRatio` if it is out of the tolerance range", () => {
+    test("should clamp `edgeSizeRatio` if it is out of the tolerance range", () => {
       expect(cleanNavState({ edgeSizeRatio: 0.001 }, data())).toStrictEqual({ edgeSizeRatio: MIN_EDGE_SIZE_RATIO });
       expect(cleanNavState({ edgeSizeRatio: 1000 }, data())).toStrictEqual({ edgeSizeRatio: MAX_EDGE_SIZE_RATIO });
     });
 
-    it("should remove `edgeColoring` if it is not a proper value", () => {
+    test("should remove `edgeColoring` if it is not a proper value", () => {
       expect(cleanNavState({ edgeColoring: "woopsy" as any }, data())).toStrictEqual({});
     });
-    it("should remove `edgeColoring` if it is the default value", () => {
+    test("should remove `edgeColoring` if it is the default value", () => {
       expect(cleanNavState({ edgeColoring: DEFAULT_EDGE_COLORING }, data())).toStrictEqual({});
     });
-    it("should keep `edgeColoring` otherwise", () => {
+    test("should keep `edgeColoring` otherwise", () => {
       expect(cleanNavState({ edgeColoring: "o" }, data())).toStrictEqual({ edgeColoring: "o" });
       expect(cleanNavState({ edgeColoring: "s" }, data())).toStrictEqual({ edgeColoring: "s" });
       expect(cleanNavState({ edgeColoring: "t" }, data())).toStrictEqual({ edgeColoring: "t" });
     });
 
-    it("should remove `edgeDirection` if it is not a proper value", () => {
+    test("should remove `edgeDirection` if it is not a proper value", () => {
       expect(cleanNavState({ edgeDirection: "woopsy" as any }, data())).toStrictEqual({});
     });
-    it("should remove `edgeDirection` if it is the default value", () => {
+    test("should remove `edgeDirection` if it is the default value", () => {
       expect(cleanNavState({ edgeDirection: DEFAULT_EDGE_DIRECTION }, data())).toStrictEqual({});
     });
-    it("should keep `edgeDirection` otherwise", () => {
+    test("should keep `edgeDirection` otherwise", () => {
       expect(cleanNavState({ edgeDirection: "d" }, data())).toStrictEqual({ edgeDirection: "d" });
       expect(cleanNavState({ edgeDirection: "u" }, data())).toStrictEqual({ edgeDirection: "u" });
     });
 
-    it("should remove `showGraphMeta` if it is not `true`", () => {
+    test("should remove `showGraphMeta` if it is not `true`", () => {
       expect(cleanNavState({ showGraphMeta: false }, data())).toStrictEqual({});
       expect(cleanNavState({ showGraphMeta: 123 as any }, data())).toStrictEqual({});
     });
-    it("should keep `showGraphMeta` if it is `true`", () => {
+    test("should keep `showGraphMeta` if it is `true`", () => {
       expect(cleanNavState({ showGraphMeta: true }, data())).toStrictEqual({ showGraphMeta: true });
     });
 
-    it("should remove min/max label size if it is not proper numbers", () => {
+    test("should remove min/max label size if it is not proper numbers", () => {
       expect(cleanNavState({ minLabelSize: "5" as any, maxLabelSize: "25" as any }, data())).toStrictEqual({});
     });
-    it("should remove min/max label size if they are the default correction ratio", () => {
+    test("should remove min/max label size if they are the default correction ratio", () => {
       expect(
         cleanNavState({ minLabelSize: DEFAULT_LABEL_SIZE, maxLabelSize: DEFAULT_LABEL_SIZE }, data()),
       ).toStrictEqual({});
     });
-    it("should clamp min/max label size if out of the tolerance range", () => {
+    test("should clamp min/max label size if out of the tolerance range", () => {
       expect(cleanNavState({ minLabelSize: 0.001, maxLabelSize: 0.001 }, data())).toStrictEqual({
         minLabelSize: MIN_LABEL_SIZE,
         maxLabelSize: MIN_LABEL_SIZE,
@@ -236,20 +237,20 @@ describe("NavState", () => {
         maxLabelSize: MAX_LABEL_SIZE,
       });
     });
-    it("should clamp max label size if lower than min label size", () => {
+    test("should clamp max label size if lower than min label size", () => {
       expect(cleanNavState({ minLabelSize: 7, maxLabelSize: 6 }, data())).toStrictEqual({
         minLabelSize: 7,
         maxLabelSize: 7,
       });
     });
 
-    it("should remove `labelThresholdRatio` if it is not a proper number", () => {
+    test("should remove `labelThresholdRatio` if it is not a proper number", () => {
       expect(cleanNavState({ labelThresholdRatio: "5" as any }, data())).toStrictEqual({});
     });
-    it("should remove `labelThresholdRatio` if it is the default correction ratio", () => {
+    test("should remove `labelThresholdRatio` if it is the default correction ratio", () => {
       expect(cleanNavState({ labelThresholdRatio: DEFAULT_LABEL_THRESHOLD }, data())).toStrictEqual({});
     });
-    it("should clamp `labelThresholdRatio` if it is out of the tolerance range", () => {
+    test("should clamp `labelThresholdRatio` if it is out of the tolerance range", () => {
       expect(cleanNavState({ labelThresholdRatio: 0.001 }, data())).toStrictEqual({
         labelThresholdRatio: MIN_LABEL_THRESHOLD,
       });
@@ -257,21 +258,21 @@ describe("NavState", () => {
         labelThresholdRatio: MAX_LABEL_THRESHOLD,
       });
     });
-    it("should remove `url` when `local` is true", () => {
+    test("should remove `url` when `local` is true", () => {
       expect(cleanNavState({ url: "http://pouet", local: true }, data())).toStrictEqual({
         local: true,
       });
     });
-    it("should remove `local` when it is not `true`", () => {
+    test("should remove `local` when it is not `true`", () => {
       expect(cleanNavState({ disableDefaultSize: true }, data())).toStrictEqual({});
     });
-    it("should remove `disableDefaultSize` when `sizeable` is empty", () => {
+    test("should remove `disableDefaultSize` when `sizeable` is empty", () => {
       expect(cleanNavState({ disableDefaultSize: true }, data())).toStrictEqual({});
     });
-    it("should remove `disableDefaultColor` when `colorable` is empty", () => {
+    test("should remove `disableDefaultColor` when `colorable` is empty", () => {
       expect(cleanNavState({ disableDefaultColor: true }, data())).toStrictEqual({});
     });
-    it("should force a `size` value when `disableDefaultSize` is true", () => {
+    test("should force a `size` value when `disableDefaultSize` is true", () => {
       expect(cleanNavState({ disableDefaultSize: true, sizeable: ["a-n", "c-n"] }, data())).toStrictEqual({
         disableDefaultSize: true,
         sizeable: ["a-n", "c-n"],
@@ -285,7 +286,7 @@ describe("NavState", () => {
         nodeSizeField: "c-n",
       });
     });
-    it("should force a `color` value when `disableDefaultColor` is true", () => {
+    test("should force a `color` value when `disableDefaultColor` is true", () => {
       expect(cleanNavState({ disableDefaultColor: true, colorable: ["n", "a-n"] }, data())).toStrictEqual({
         disableDefaultColor: true,
         colorable: ["n", "a-n"],
@@ -302,7 +303,7 @@ describe("NavState", () => {
   });
 
   describe("#navStateToQueryURL", () => {
-    it("should work with base keys", () => {
+    test("should work with base keys", () => {
       expect(
         navStateToQueryURL({
           url: "foobar",
@@ -328,7 +329,7 @@ describe("NavState", () => {
       ).toBe("l=1&nr=0.5&er=0.7&ec=s&ed=d&gm=1&lt=2&ls=10&le=15");
     });
 
-    it("should work with one filter", () => {
+    test("should work with one filter", () => {
       expect(
         navStateToQueryURL({
           filters: [{ type: "terms", field: "name", values: ["Doe"] }],
@@ -336,7 +337,7 @@ describe("NavState", () => {
       ).toBe("name.t=Doe");
     });
 
-    it("should work with multiple filters", () => {
+    test("should work with multiple filters", () => {
       expect(
         navStateToQueryURL({
           filters: [
@@ -348,7 +349,7 @@ describe("NavState", () => {
       ).toBe("name.t[]=Doe&name.t[]=Black&age.min=10&age.max=30&content.v=loremipsum");
     });
 
-    it("should handle properly filters encoding", () => {
+    test("should handle properly filters encoding", () => {
       expect(
         navStateToQueryURL({
           filters: [{ type: "terms", field: "name&firstname", values: ['Jean, "Jacques"', "José"] }],
@@ -356,13 +357,13 @@ describe("NavState", () => {
       ).toBe("name%26firstname.t[]=Jean%2C%20%22Jacques%22&name%26firstname.t[]=Jos%C3%A9");
     });
 
-    it("should work with filterable fields", () => {
+    test("should work with filterable fields", () => {
       expect(navStateToQueryURL({ filterable: ["age", "name"] })).toBe("fa[]=age&fa[]=name");
     });
   });
 
   describe("#queryURLToNavState", () => {
-    it("should work with base keys", () => {
+    test("should work with base keys", () => {
       expect(queryURLToNavState("url=foobar&r=d&c=name&s=age&n=John&st[]=age")).toStrictEqual({
         url: "foobar",
         role: "d",
@@ -384,13 +385,13 @@ describe("NavState", () => {
       });
     });
 
-    it("should work with one filter", () => {
+    test("should work with one filter", () => {
       expect(queryURLToNavState("name.t=Doe")).toStrictEqual({
         filters: [{ type: "terms", field: "name", values: ["Doe"] }],
       });
     });
 
-    it("should work with filters", () => {
+    test("should work with filters", () => {
       expect(
         queryURLToNavState("name.t[]=Doe&name.t[]=Black&age.min=10&age.max=30&content.v=loremipsum"),
       ).toStrictEqual({
@@ -402,7 +403,7 @@ describe("NavState", () => {
       });
     });
 
-    it("should handle properly filters encoding", () => {
+    test("should handle properly filters encoding", () => {
       expect(
         queryURLToNavState("name%26firstname.t[]=Jean%2C%20%22Jacques%22&name%26firstname.t[]=Jos%C3%A9"),
       ).toStrictEqual({
@@ -410,7 +411,7 @@ describe("NavState", () => {
       });
     });
 
-    it("should work with filterable fields", () => {
+    test("should work with filterable fields", () => {
       expect(queryURLToNavState("fa=age")).toStrictEqual({ filterable: ["age"] });
       expect(queryURLToNavState("fa[]=age")).toStrictEqual({ filterable: ["age"] });
       expect(queryURLToNavState("fa=age&fa=name")).toStrictEqual({ filterable: ["age", "name"] });

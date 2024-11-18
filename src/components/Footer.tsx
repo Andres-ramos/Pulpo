@@ -10,7 +10,7 @@ const Footer: FC = () => (
     <div className="d-flex flex-row align-items-center">
       <Link to="/" className="flex-shrink-0 me-2 p-0">
         <img
-          src={process.env.PUBLIC_URL + "/logo.svg"}
+          src={import.meta.env.BASE_URL + "logo.svg"}
           alt="Retina logo"
           style={{ height: "1.2em" }}
           className="me-1"

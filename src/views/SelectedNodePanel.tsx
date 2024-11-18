@@ -1,16 +1,16 @@
-import React, { FC, useContext } from "react";
-import { map, mapKeys, omitBy, startCase, uniq } from "lodash";
-import { FaTimes } from "react-icons/fa";
 import cx from "classnames";
-import Linkify from "react-linkify";
+import { map, mapKeys, omitBy, startCase, uniq } from "lodash";
+import React, { FC, useContext } from "react";
 import { BiRadioCircleMarked } from "react-icons/bi";
+import { FaTimes } from "react-icons/fa";
+import Linkify from "react-linkify";
 import { Coordinates } from "sigma/types";
 
-import { GraphContext } from "../lib/context";
-import { ANIMATION_DURATION, DEFAULT_LINKIFY_PROPS, isHiddenRetinaField, removeRetinaPrefix } from "../lib/consts";
-import { NodeData } from "../lib/data";
-import Node from "../components/Node";
 import Connection from "../components/Connection";
+import Node from "../components/Node";
+import { ANIMATION_DURATION, DEFAULT_LINKIFY_PROPS, isHiddenRetinaField, removeRetinaPrefix } from "../lib/consts";
+import { GraphContext } from "../lib/context";
+import { NodeData } from "../lib/data";
 
 const HIDDEN_KEYS = new Set(["x", "y", "z", "size", "label", "color"]);
 
