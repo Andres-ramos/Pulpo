@@ -1,7 +1,7 @@
 {
-  "name": "retina",
-  "version": "1.0.0-beta.1",
-  "homepage": "https://ouestware.gitlab.io/retina",
+  "name": "pulpo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Andres-ramos/Pulpo",
   "scripts": {
     "start": "vite",
     "build": "vite build --base=./",

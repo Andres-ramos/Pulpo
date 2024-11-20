@@ -1,6 +1,6 @@
 {
-  "short_name": "Retina",
-  "name": "A web application to share network visualizations",
+  "short_name": "Pulpo",
+  "name": "A web application for network visualization",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
