@@ -2,12 +2,9 @@ import cx from "classnames";
 import React, { FC, useContext, useMemo } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsShare } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { MdOutlinePreview } from "react-icons/md";
-import { Link } from "react-router-dom";
 
-import Footer from "../components/Footer";
 import { GraphContext } from "../lib/context";
 import EditorBlock from "./EditorBlock";
 import Filters from "./Filters";
@@ -63,7 +60,7 @@ const LeftPanel: FC = () => {
               </button>
             )}
             <button
-              className={cx("btn ms-2 mt-1", panel === "main" ? selectedButtonClass : "btn-outline-dark")}
+              className={cx("btn ms-2 mt-1", "btn-outline-black text-dark bg-info opacity-100",)}
               onClick={() => setPanel("main")}
               disabled={panel === "main"}
               title="Explore the graph"
@@ -89,9 +86,6 @@ const LeftPanel: FC = () => {
                 <BsShare />
               </button>
             )}
-            <Link className="btn btn-outline-dark ms-2 mt-1" title="Retina's homepage" to="/">
-              <FaHome />
-            </Link>
           </span>
         </div>
       </div>

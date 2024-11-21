@@ -32,8 +32,11 @@ export function applyNodeSizes(
   { nodeSizeRatio }: Pick<NavState, "nodeSizeRatio">,
 ) {
   const ratio = typeof nodeSizeRatio === "number" ? nodeSizeRatio : DEFAULT_NODE_SIZE_RATIO;
-  graph.forEachNode((node, { rawSize }) =>
-    graph.setNodeAttribute(node, "size", (nodeSizes ? nodeSizes[node] : rawSize) * ratio),
+  graph.forEachNode((node, { rawSize }) => {
+    graph.setNodeAttribute(node, "size", (nodeSizes ? nodeSizes[node] : rawSize) * ratio)
+    graph.setNodeAttribute(node, 'border', ('black'))
+  }
+    
   );
 }
 

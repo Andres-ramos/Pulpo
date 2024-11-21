@@ -76,13 +76,23 @@ export function getEmptyComputedData(): ComputedData {
     edgeSizeExtents: [0, Infinity],
   };
 }
+// TODO: Make better name
+const foo = (data:string): string => {
+  const m = {
+    "#d5c695":  "#D7FB41",
+    "#d2b1d5": "#417AFB",
+    "#86d2ce": "#C241FB"
+
+  }
+  return m[data]
+}
 
 export function getNodeColors(
   { graph, fieldsIndex }: Data,
   { nodeColorField }: Pick<NavState, "nodeColorField">,
 ): Pick<ComputedData, "getColor" | "nodeColors"> {
   const result: Pick<ComputedData, "getColor" | "nodeColors"> = {};
-
+  // console.log("result", nodeColorField)
   if (typeof nodeColorField === "string") {
     result.nodeColors = {};
     const field = fieldsIndex[nodeColorField];
@@ -104,7 +114,7 @@ export function getNodeColors(
 
     if (getColor) {
       graph.forEachNode((node, nodeData) => {
-        result.nodeColors![node] = getColor!(getValue(nodeData, field));
+        result.nodeColors![node] = foo(getColor!(getValue(nodeData, field)));
       });
 
       result.getColor = getColor;

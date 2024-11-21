@@ -255,6 +255,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
                 <NodeSizeCaption />
               </div>
             </SigmaContainer>
+            
           </section>
         </div>
 

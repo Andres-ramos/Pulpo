@@ -24,7 +24,7 @@ export const EDGE_SIZE_MAX = 5;
 export const HIGHLIGHTED_EDGE_SIZE_RATIO = 2;
 
 export const DEFAULT_NODE_COLOR = "#aaa";
-export const DEFAULT_EDGE_COLOR = "#ccc";
+export const DEFAULT_EDGE_COLOR = "black";
 export const HIDDEN_NODE_COLOR = "#f0f0f0";
 export const HIGHLIGHTED_NODE_COLOR = "#333333";
 export const HIDDEN_EDGE_COLOR = "#f6f6f6";
@@ -58,12 +58,12 @@ export const BASE_SIGMA_SETTINGS: Partial<Settings> = {
   zIndex: true,
   nodeReducer: hiddenReducer,
   edgeReducer: hiddenReducer,
-  defaultNodeType: "circle",
+  defaultNodeType: "bordered",
   nodeProgramClasses: {
-    circle: NodeCircleProgram,
+    // circle: NodeCircleProgram,
     bordered: createNodeBorderProgram({
       borders: [
-        { size: { value: 0.2 }, color: { attribute: "borderColor" } },
+        { size: { value: 0.1 }, color: { attribute: "borderColor" } },
         { size: { fill: true }, color: { attribute: "color" } },
       ],
     }),
