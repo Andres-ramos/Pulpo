@@ -260,12 +260,18 @@ def add_nodes_edges(G, entity_list, node_ids, edge_type="agent"):
     return G
 
 def main():
+    # TODO: 
+    # 0. Refactor code into modules
+    # 1. Improve matching to consider cases where one last name vs two last name
+    # 2. Integrate donations into the pipeline
+    # 3. Integrate contracts into the pipeline
+    # 4. Integrate government agencies into the pipeline
+
     with open(CORPORATION_JSON, 'r') as f:
         corporation_object_list = json.loads(f.read())
 
     clean_corporation_objects = transform_corporation_data(corporation_object_list)
 
-    
     resident_agents, officer_list, incorporator_list = filter_executives(clean_corporation_objects)
 
     individual_agents, corporation_agents = prepare_agents(resident_agents)    
@@ -280,8 +286,8 @@ def main():
     G = add_nodes_edges(G, corporation_agents, node_ids)
     G = add_nodes_edges(G, individual_officers, node_ids, edge_type="officer")
     G = add_nodes_edges(G, individual_incorporators, node_ids, edge_type="incorporator")
-
-    nx.write_graphml(G, "./public/test_1.graphml")
+    # Get path from variable
+    nx.write_graphml(G, "./public/graph.graphml")
 
 if __name__ == "__main__":
     main()
