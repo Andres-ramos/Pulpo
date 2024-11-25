@@ -1,6 +1,6 @@
 import React, { FC, createElement, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import logo from "/public/pulpo-o.svg"
+import logo from "/pulpo-o.svg"
 const Header: FC = () => {
   return (
     <div className="header">
