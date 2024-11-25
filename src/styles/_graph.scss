@@ -33,7 +33,7 @@
     background: white;
 
     &:hover {
-      background: lightblue;
+      background: #d6ff33;
       color: black;
     }
   }
@@ -103,7 +103,7 @@
       left: 50%;
       margin-left: -50vw;
 
-      background: white;
+      background: #fdfff5;
       // opacity: .1
 
       .sigma-mouse {
@@ -121,7 +121,7 @@
   }
 
   .panel-left {
-    background: white;
+    background: #fefffa;
     border-right: 2px solid black;
     overflow: hidden;
     height: 100%;

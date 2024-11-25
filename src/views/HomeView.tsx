@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import { SAMPLE_DATASET_URI } from "../lib/consts";
 import { getErrorMessage } from "../lib/errors";
 import { useNotifications } from "../lib/notifications";
+import Header from "./Header"
 
 const HomeView: FC = () => {
   const navigate = useNavigate();
@@ -33,117 +34,43 @@ const HomeView: FC = () => {
   }, [error, notify]);
 
   return (
-    <main className="home-view">
+    <main className="home-view ">
+      <Header/>
+
       <div className="title-block">
-        <div className="text-center">
-          <img src={import.meta.env.BASE_URL + "logo.svg"} alt="Retina Logo" className="mb-3" />
-        </div>
         <h1 className="mb-4">
-          <span className="position-relative">
-            Retina{" "}
-            <small className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning fs-6">
-              beta
+          <span className="position-relative font-weight-bold text-dark">
+            Pulpo-o{" "}
+            <small className="position-absolute top-0 start-100 translate-middle badge bg-success fs-6 text-dark">
+              alpha
             </small>
           </span>
         </h1>
         <h2 className="h4 text-center">
-          Retina is a web application that helps you share your graph visualizations online.
-        </h2>
-        <h2 className="h5 text-center">
-          It currently accepts <a href="http://gexf.net/">GEXF</a> and{" "}
-          <a href="https://en.wikipedia.org/wiki/GraphML">GraphML</a> files.
+          Pulpo-o es una aplicacion para visualizar grafos
         </h2>
         <div>
           <div className={cx("gexf-form", "text-center", "mt-4", state.type === "hidden" && "opacity-0")}>
-            {state.type === "choice" && (
-              <>
-                <p className="h5">Your graph file is...</p>
-                <div className="d-flex flex-row align-items-stretch flex-wrap justify-content-center">
-                  <button
-                    type="button"
-                    className="btn btn-outline-dark flex-regular-width m-1"
-                    onClick={() => setState({ type: "url", input: "" })}
-                  >
-                    <AiOutlineCloud /> Online
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-dark flex-regular-width m-1"
-                    onClick={() => setState({ type: "local", input: null })}
-                  >
-                    <RiComputerLine /> On your computer
-                  </button>
-                </div>
-              </>
-            )}
-            {state.type === "url" && (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  navigate(`/graph/?r=d&url=${encodeURIComponent(state.input)}`, { state: { fromHome: true } });
+                  navigate(`/graph/?r=d&l=1`);
                 }}
               >
-                <label htmlFor="graph-url-input" className="form-label h5">
-                  Enter here your graph file URL, or use{" "}
-                  <a
-                    href={SAMPLE_DATASET_URI}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setState({ type: "url", input: window.location.origin + SAMPLE_DATASET_URI });
-                    }}
-                  >
-                    our sample
-                  </a>
-                  :
-                </label>
-                <input
-                  type="url"
-                  className="form-control"
-                  id="graph-url-input"
-                  value={state.input}
-                  placeholder="http://..."
-                  onChange={(e) => setState({ type: "url", input: e.target.value })}
-                />
-                <button
-                  type="button"
-                  className="btn btn-outline-dark mt-2 me-2"
-                  onClick={() => setState({ type: "choice" })}
-                >
-                  Cancel
-                </button>
-                <button type="submit" className="btn btn-outline-dark mt-2" disabled={!state.input}>
+                <button type="submit" className="btn btn-lg viz-button mt-2 text-dark font-weight-bold">
                   Visualize
                 </button>
               </form>
-            )}
-            {state.type === "local" && (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  navigate(`/graph/?r=d&l=1`, { state: { file: state.input as File, fromHome: true } });
-                }}
-              >
-                <DropInput value={state.input} onChange={(file) => setState({ type: "local", input: file })} />
-                <button
-                  type="button"
-                  className="btn btn-outline-dark mt-2 me-2"
-                  onClick={() => setState({ type: "choice" })}
-                >
-                  Cancel
-                </button>
-                <button type="submit" className="btn btn-outline-dark mt-2" disabled={!state.input}>
-                  Visualize
-                </button>
-              </form>
-            )}
+            
+          
           </div>
         </div>
       </div>
 
-      <div className="footer p-2">
+      {/* <div className="footer p-2">
         <hr className="mb-2" />
         <Footer />
-      </div>
+      </div> */}
     </main>
   );
 };

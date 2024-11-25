@@ -37,7 +37,7 @@ import { hiddenReducer } from "../lib/consts";
 import NodeSizeCaption from "./NodeSizeCaption";
 import LeftPanel from "./LeftPanel";
 import { ModalName, MODALS } from "./modals";
-
+import Header from "./Header";
 
 const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const navigate = useNavigate();
@@ -235,6 +235,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
       }}
     >
       <main className={cx("graph-view", panelExpanded ? "expanded" : "collapsed")} ref={domRoot}>
+        <Header />
         <div className="wrapper">
           <LeftPanel />
           <section className="graph">
