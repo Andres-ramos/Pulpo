@@ -76,23 +76,12 @@ export function getEmptyComputedData(): ComputedData {
     edgeSizeExtents: [0, Infinity],
   };
 }
-// TODO: Make better name
-const foo = (data:string): string => {
-  const m = {
-    "#d5c695":  "#D7FB41",
-    "#d2b1d5": "#417AFB",
-    "#86d2ce": "#C241FB"
-
-  }
-  return m[data]
-}
 
 export function getNodeColors(
   { graph, fieldsIndex }: Data,
   { nodeColorField }: Pick<NavState, "nodeColorField">,
 ): Pick<ComputedData, "getColor" | "nodeColors"> {
   const result: Pick<ComputedData, "getColor" | "nodeColors"> = {};
-  // console.log("result", nodeColorField)
   if (typeof nodeColorField === "string") {
     result.nodeColors = {};
     const field = fieldsIndex[nodeColorField];
@@ -101,26 +90,28 @@ export function getNodeColors(
     if (field.type === "quali") {
       const values = sortBy(field.values, (v) => -v.count);
       const palette = PALETTES[Math.min(values.length, MAX_PALETTE_SIZE)];
-      const colorsDict: Record<string, string> = values.reduce(
-        (iter, v, i) => ({ ...iter, [v.id]: palette[i] || DEFAULT_NODE_COLOR }),
-        {},
-      );
-      getColor = (value: any) => colorsDict[value] || DEFAULT_NODE_COLOR;
+      const colorsDict: Record<string, string> = {
+        "corporation": "#417AFB",
+        "individual": "#D7FB41",
+        "governement_entity": "#C241FB"
+      }
+      getColor = (value: any) => colorsDict[value];
     } else if (field.type === "quanti") {
+      
       const gradient = chroma.scale(GRADIENT).domain([0, 1]);
       getColor = (value: any) =>
         typeof value === "number" ? gradient((value - field.min) / (field.max - field.min)).hex() : DEFAULT_NODE_COLOR;
     }
 
     if (getColor) {
+      
       graph.forEachNode((node, nodeData) => {
-        result.nodeColors![node] = foo(getColor!(getValue(nodeData, field)));
+        result.nodeColors![node] = getColor!(getValue(nodeData, field));
       });
 
       result.getColor = getColor;
     }
   }
-
   return result;
 }
 
@@ -209,7 +200,6 @@ export function getMetrics(
   currentMetrics?: ComputedData["metrics"],
 ): Pick<ComputedData, "metrics" | "filteredNodes" | "filteredEdges"> {
   const { graph } = data;
-
   const allFilterable = getFilterableFields(data, navState);
 
   currentMetrics = currentMetrics || {};

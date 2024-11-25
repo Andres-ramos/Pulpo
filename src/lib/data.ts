@@ -149,9 +149,9 @@ export async function loadGraphURL(path: string): Promise<{ name: string; extens
 }
 // Hardcoded file name
 export async function loadGraphFile(): Promise<{ name: string; extension: string; textContent: string }> {
-  const name = "./graph.graphml";
+  const name = "/graph.graphml";
   const extension = (name.split(".").pop() || "").toLowerCase();
-  const response = await fetch("/graph.graphml", {
+  const response = await fetch(name, {
     headers: {
       "Content-Type": "text/xml",
     },
@@ -181,8 +181,7 @@ export function prepareGraph(rawGraph: RawGraph): { graph: RetinaGraph; report: 
   const report: Report = {};
 
   rawGraph.forEachNode((node, attributes) => {
-    const { x, y, size, color, label } = attributes;
-
+    const { x, y, size, color, label} = attributes;
     if (typeof attributes.x !== "number" || typeof attributes.y !== "number")
       report.missingNodePositions = (report.missingNodePositions || 0) + 1;
     if (typeof attributes.size !== "number") report.missingNodeSizes = (report.missingNodeSizes || 0) + 1;
@@ -204,12 +203,14 @@ export function prepareGraph(rawGraph: RawGraph): { graph: RetinaGraph; report: 
       subtitles: [],
 
       attributes,
+      // value: value,
+      // category: type,
+
 
       computed: {
         degree: NaN,
       },
     };
-
     graph.addNode(node, newNodeAttributes);
   });
   rawGraph.forEachEdge((edge, attributes, source, target) => {
@@ -249,7 +250,6 @@ export function prepareGraph(rawGraph: RawGraph): { graph: RetinaGraph; report: 
 
     noverlap.assign(graph, { maxIterations: 150 });
   }
-
   return { graph, report };
 }
 
@@ -390,7 +390,6 @@ export function getFields(graph: RetinaGraph, type: "node" | "edge"): Field[] {
 export function enrichData(graph: RetinaGraph): Data {
   const fields = getFields(graph, "node");
   const edgeFields = getFields(graph, "edge");
-
   // Reindex number fields as numbers:
   const fieldsToReindex = uniq(
     fields.filter((field) => field.type === "quanti" && !field.computed).map((field) => field.rawFieldId),
