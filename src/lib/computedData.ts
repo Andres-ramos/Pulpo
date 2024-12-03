@@ -89,12 +89,13 @@ export function getNodeColors(
 
     if (field.type === "quali") {
       const values = sortBy(field.values, (v) => -v.count);
-      const palette = PALETTES[Math.min(values.length, MAX_PALETTE_SIZE)];
       const colorsDict: Record<string, string> = {
         "corporation": "#417AFB",
-        "individual": "#D7FB41",
-        "governement_entity": "#C241FB"
+        "individual": "#d7fb41",
+        "government_entity": "#D67FFC",
+        "politician": "#AD05F8"
       }
+
       getColor = (value: any) => colorsDict[value];
     } else if (field.type === "quanti") {
       
@@ -104,7 +105,6 @@ export function getNodeColors(
     }
 
     if (getColor) {
-      
       graph.forEachNode((node, nodeData) => {
         result.nodeColors![node] = getColor!(getValue(nodeData, field));
       });
@@ -133,7 +133,8 @@ export function getNodeSizes(
     const field = fieldsIndex[nodeSizeField];
 
     if (field.type === "quanti") {
-      getSize = (value: any) => {
+      const getSize = (value: any, nodeData: any): number => {
+        console.log("value", value, nodeData)
         const size =
           typeof value === "number"
             ? ((NODE_SIZE_MAX - NODE_SIZE_MIN) * (value - field.min)) / (field.max - field.min) + NODE_SIZE_MIN
@@ -141,7 +142,7 @@ export function getNodeSizes(
         return size * ratio * screenSizeRatio * graphSizeRatio;
       };
       graph.forEachNode((node, nodeData) => {
-        nodeSizes![node] = getSize!(getValue(nodeData, field));
+        nodeSizes![node] = getSize!(getValue(nodeData, field), nodeData);
       });
       nodeSizeExtents = [field.min, field.max];
     }

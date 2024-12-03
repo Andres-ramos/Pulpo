@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-sigma/core": "^4.0.3",
+    "@sigma/edge-curve": "^3.0.0-beta.16",
     "@sigma/export-image": "^3.0.0-beta.1",
     "@sigma/node-border": "^3.0.0-beta.7",
     "bootstrap": "^5.3.3",

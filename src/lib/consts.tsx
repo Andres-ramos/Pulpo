@@ -5,6 +5,9 @@ import React from "react";
 import { Props as LinkifyProps } from "react-linkify";
 import { NodeCircleProgram } from "sigma/rendering";
 import { Settings } from "sigma/settings";
+// import { DEFAULT_EDGE_CURVATURE, EdgeCurvedProgram, indexParallelEdgesIndex } from "@sigma/edge-curve";
+import EdgeCurveProgram from "@sigma/edge-curve";
+import { EdgeLineProgram} from "sigma/rendering";
 
 export const SAMPLE_DATASET_URI = import.meta.env.BASE_URL + "dataset.gexf";
 
@@ -59,6 +62,7 @@ export const BASE_SIGMA_SETTINGS: Partial<Settings> = {
   nodeReducer: hiddenReducer,
   edgeReducer: hiddenReducer,
   defaultNodeType: "bordered",
+  defaultEdgeType: "curved",
   nodeProgramClasses: {
     // circle: NodeCircleProgram,
     bordered: createNodeBorderProgram({
@@ -67,6 +71,10 @@ export const BASE_SIGMA_SETTINGS: Partial<Settings> = {
         { size: { fill: true }, color: { attribute: "color" } },
       ],
     }),
+  },
+  edgeProgramClasses: {
+    straight: EdgeLineProgram,
+    curved: EdgeCurveProgram,
   },
 };
 

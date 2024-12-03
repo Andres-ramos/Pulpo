@@ -76,24 +76,32 @@ export function applyEdgeColors(
   { nodeColors }: Pick<ComputedData, "nodeColors">,
   { edgeColoring }: Pick<NavState, "edgeColoring">,
 ) {
-  let getColor: (edge: string, data: EdgeData) => string;
-
-  switch (edgeColoring) {
-    case "s":
-    case "t":
-      getColor = (edge: string) => {
-        const node = edgeColoring === "s" ? graph.source(edge) : graph.target(edge);
-        return nodeColors ? nodeColors[node] : graph.getNodeAttribute(node, "rawColor");
-      };
-      break;
-    case "c":
-      getColor = () => DEFAULT_EDGE_COLOR;
-      break;
-    case "o":
-    default:
-      getColor = (edge, { rawColor }) => rawColor;
-  }
-
+  // let getColor: (edge: string, data: EdgeData) => string;
+  
+  // switch (edgeColoring) {
+  //   case "s":
+  //   case "t":
+  //     getColor = (edge: string) => {
+  //       const node = edgeColoring === "s" ? graph.source(edge) : graph.target(edge);
+  //       return nodeColors ? nodeColors[node] : graph.getNodeAttribute(node, "rawColor");
+  //     };
+  //     break;
+  //   case "c":
+  //     getColor = () => DEFAULT_EDGE_COLOR;
+  //     break;
+  //   case "o":
+  //   default:
+  //     getColor = (edge, { rawColor }) => rawColor;
+  // }
+  const getColor = (edge: string, data:any):any => {
+    const colorMap = {
+      "officer": "black",
+      "agent": "black",
+      "incorporator":"black",
+      "contract": "red"
+    }
+    return colorMap[data.attributes.label]
+  };
   graph.forEachEdge((edge, data) => graph.setEdgeAttribute(edge, "color", getColor(edge, data)));
 }
 
@@ -124,9 +132,36 @@ export function applyEdgeSizes(
   { edgeSizeRatio }: Pick<NavState, "edgeSizeRatio">,
 ) {
   const ratio = typeof edgeSizeRatio === "number" ? edgeSizeRatio : DEFAULT_EDGE_SIZE_RATIO;
-  graph.forEachEdge((edge, { rawSize }) =>
-    graph.setEdgeAttribute(edge, "size", (edgeSizes ? edgeSizes[edge] : rawSize) * ratio),
+  const getEdgeSize = (edge:string , data: any): any => {    
+    const sizeMap = {
+      "officer": 1,
+      "agent": 1,
+      "incorporator": 1,
+      "donation": 2,
+      "contract": 5
+    }
+    return sizeMap[data.attributes.label]
+
+  }
+  graph.forEachEdge((edge, data) =>
+    graph.setEdgeAttribute(edge, "size", getEdgeSize(edge, data)),
   );
+}
+
+export function applyEdgeStyles(
+  {graph}: Data
+) {
+
+  const m = {
+    "contract": "curved",
+    "donation": "curved",
+    "officer": "straight",
+    "incorporator": "straight",
+    "agent": "straight"
+  }
+  graph.forEachEdge((edge, data) =>{
+    graph.setEdgeAttribute(edge, "type", m[data.attributes.label])
+  })
 }
 
 export function applyGraphStyle(data: Data, computedData: ComputedData, navState: NavState) {

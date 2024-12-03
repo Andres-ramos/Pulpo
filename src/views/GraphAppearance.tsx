@@ -14,6 +14,7 @@ import {
   applyNodeLabelSizes,
   applyNodeSizes,
   applyNodeSubtitles,
+  applyEdgeStyles,
   getReducers,
 } from "../lib/graph";
 import drawLabel, { drawHover } from "../utils/canvas";
@@ -88,6 +89,10 @@ const GraphAppearance: FC = () => {
   useEffect(() => {
     applyEdgeSizes(data, { edgeSizes }, { edgeSizeRatio });
   }, [sigma, data, edgeSizes, edgeSizeRatio]);
+
+  useEffect(() => {
+    applyEdgeStyles(data);
+  }, [sigma, data])
 
   return isRendered ? null : <LoaderFill />;
 };
