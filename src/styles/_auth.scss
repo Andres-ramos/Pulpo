@@ -1,0 +1,26 @@
+.login {
+    display: flex;
+    margin: auto;
+    border: solid;
+    padding: 20px;
+    background-color: #fdfff5;
+    width: 25%;
+    .form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .label {
+        padding: 10px;
+    }
+
+    .input {
+        margin: 20px;
+    }
+
+    .button {
+        margin-top: 10px;
+        background-color: #d6ff33;
+    }
+}

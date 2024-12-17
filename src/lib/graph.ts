@@ -76,29 +76,15 @@ export function applyEdgeColors(
   { nodeColors }: Pick<ComputedData, "nodeColors">,
   { edgeColoring }: Pick<NavState, "edgeColoring">,
 ) {
-  // let getColor: (edge: string, data: EdgeData) => string;
-  
-  // switch (edgeColoring) {
-  //   case "s":
-  //   case "t":
-  //     getColor = (edge: string) => {
-  //       const node = edgeColoring === "s" ? graph.source(edge) : graph.target(edge);
-  //       return nodeColors ? nodeColors[node] : graph.getNodeAttribute(node, "rawColor");
-  //     };
-  //     break;
-  //   case "c":
-  //     getColor = () => DEFAULT_EDGE_COLOR;
-  //     break;
-  //   case "o":
-  //   default:
-  //     getColor = (edge, { rawColor }) => rawColor;
-  // }
+
   const getColor = (edge: string, data:any):any => {
     const colorMap = {
-      "officer": "black",
-      "agent": "black",
-      "incorporator":"black",
-      "contract": "red"
+      "officer": "#3c4b02",
+      "agent": "#3c4b02",
+      "incorporator":"#3c4b02",
+      "contract": "#3c4b02",
+      "donation": "#3c4b02",
+      "junta_directores": "#3c4b02"
     }
     return colorMap[data.attributes.label]
   };
@@ -137,8 +123,8 @@ export function applyEdgeSizes(
       "officer": 1,
       "agent": 1,
       "incorporator": 1,
-      "donation": 2,
-      "contract": 5
+      "donation": 1,
+      "contract": 1
     }
     return sizeMap[data.attributes.label]
 

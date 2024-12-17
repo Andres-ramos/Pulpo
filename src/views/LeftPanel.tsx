@@ -15,7 +15,6 @@ import SelectedNodePanel from "./SelectedNodePanel";
 
 const LeftPanel: FC = () => {
   const { navState, embedMode, data, panel, setPanel, openModal } = useContext(GraphContext);
-
   const selectedNode = useMemo(
     () =>
       navState?.selectedNode && data?.graph.hasNode(navState.selectedNode)
@@ -25,6 +24,8 @@ const LeftPanel: FC = () => {
   );
 
   let content: JSX.Element;
+  // TODO: Figure out how content is determined from query params
+  // r=d is what causes edit panel to open
   if (panel === "edit" && navState.role === "d") {
     content = <EditorBlock />;
   } else if (panel === "readability") {
@@ -42,7 +43,7 @@ const LeftPanel: FC = () => {
   }
 
   const selectedButtonClass =
-    navState.role === "d" ? "btn-dark opacity-100" : "btn-outline-dark text-dark bg-info opacity-100";
+    navState.role === "d" ? "btn-black opacity-100" : "btn-outline-dark text-dark bg-primary opacity-100";
 
   return (
     <section className="panel-left d-flex flex-column">
@@ -51,7 +52,7 @@ const LeftPanel: FC = () => {
           <span className="text-nowrap">
             {navState.role === "d" && (
               <button
-                className={cx("btn ms-2 mt-1", panel === "edit" ? selectedButtonClass : "btn-outline-dark")}
+                className={cx("btn ms-2 mt-1", panel === "edit" ? selectedButtonClass : "btn-outline-primary", )}
                 onClick={() => setPanel("edit")}
                 disabled={panel === "edit"}
                 title="Edit available interactions and information"
@@ -60,7 +61,7 @@ const LeftPanel: FC = () => {
               </button>
             )}
             <button
-              className={cx("btn ms-2 mt-1", "btn-outline-black text-dark bg-info opacity-100",)}
+              className={cx("btn ms-2 mt-1", "btn-outline-black text-dark bg-primary opacity-100",)}
               onClick={() => setPanel("main")}
               disabled={panel === "main"}
               title="Explore the graph"
@@ -68,7 +69,7 @@ const LeftPanel: FC = () => {
               <MdOutlinePreview /> Explore
             </button>
             <button
-              className={cx("btn ms-2 mt-1", panel === "readability" ? selectedButtonClass : "btn-outline-dark")}
+              className={cx("btn ms-2 mt-1", panel === "readability" ? selectedButtonClass : "btn-outline-black bg-primary")}
               onClick={() => setPanel("readability")}
               disabled={panel === "readability"}
               title="Edit readability settings"

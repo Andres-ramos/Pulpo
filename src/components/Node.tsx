@@ -17,30 +17,36 @@ const Node: FC<{
     setHovered,
     computedData: { filteredNodes },
   } = useContext(GraphContext);
-  const baseClassName = "node fs-6 d-flex flex-row align-items-center";
-
+ const baseClassName = "node fs-6 d-flex flex-row align-items-center";
   const content = (
     <>
-      <span
-        className={cx("me-2 flex-shrink-0", filteredNodes && !filteredNodes.has(node) ? "circle" : "disc")}
-        style={{
-          background: attributes.color,
-        }}
-      />
-      <span className="ellipsis">{attributes.label}</span>
+      
+      <span className="ellipsis">{attributes.label}</span>    
     </>
   );
 
+
+  const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'black',
+    fontWeight:"bold"
+  };
+
   return link ? (
-    <Link
-      className={cx(baseClassName, className)}
-      onMouseEnter={() => setHovered(node)}
-      onMouseLeave={() => setHovered(undefined)}
-      to={"/graph/?" + navStateToQueryURL({ ...navState, selectedNode: node })}
-      title={attributes.label || undefined}
-    >
-      {content}
-    </Link>
+    <div >
+      <Link
+        className={cx(baseClassName, className)}
+        onMouseEnter={() => setHovered(node)}
+        onMouseLeave={() => setHovered(undefined)}
+        to={"/graph/?" + navStateToQueryURL({ ...navState, selectedNode: node })}
+        title={attributes.label || undefined}
+        style={linkStyle}
+      >
+        {content}
+      </Link>
+    </div>
+    
   ) : (
     <div className={cx(baseClassName, className)} title={attributes.label || undefined}>
       {content}

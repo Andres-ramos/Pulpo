@@ -1,0 +1,48 @@
+.selected-node {
+    font-size: 20em;
+    
+}
+
+.node-profile {
+    display: flex;
+    
+    .profile-text {
+        text-align: 'center';
+        width: auto;
+
+        .profile-name {
+            font-weight: bolder;
+            margin:auto
+        }
+        
+        .profile-type {
+            font-weight: lighter;
+            margin:auto;
+            font-size: medium;
+        }
+
+    }
+
+
+}
+
+.conn-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 20px;
+    
+}
+
+.conn-card-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.card-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f00;
+}

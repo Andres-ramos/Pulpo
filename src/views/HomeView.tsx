@@ -47,18 +47,18 @@ const HomeView: FC = () => {
           </span>
         </h1>
         <h2 className="h4 text-center">
-          Pulpo-o es una aplicacion para visualizar grafos
+          Pulpo-o es una aplicacion para entender los problemas que enfrentamos quienes sabemos que un mejor Puerto Rico es posible
         </h2>
         <div>
           <div className={cx("gexf-form", "text-center", "mt-4", state.type === "hidden" && "opacity-0")}>
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  navigate(`/graph/?r=d&l=1`);
+                  navigate(`/graph/?r=e&l=1`);
                 }}
               >
                 <button type="submit" className="btn btn-lg viz-button mt-2 text-dark font-weight-bold">
-                  Visualize
+                  Visualizar
                 </button>
               </form>
             
@@ -66,8 +66,8 @@ const HomeView: FC = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="footer p-2">
+{/* 
+      <div className="footer p-2">
         <hr className="mb-2" />
         <Footer />
       </div> */}

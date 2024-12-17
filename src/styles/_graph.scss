@@ -202,3 +202,13 @@
   background: #eee;
   cursor: pointer;
 }
+
+.coso {
+  display: flex;
+  margin-top: 6px;
+
+  .sub-title {
+    padding-left: 10px;
+    font-weight: bolder;
+  }
+}

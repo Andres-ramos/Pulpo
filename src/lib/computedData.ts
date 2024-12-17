@@ -93,7 +93,10 @@ export function getNodeColors(
         "corporation": "#417AFB",
         "individual": "#d7fb41",
         "government_entity": "#D67FFC",
-        "politician": "#AD05F8"
+        "politician": "#AD05F8",
+        "Junta de directores": "#BE35FA",
+        "Secretario": "#BE35FA",
+        "position": "#EEC9FE"
       }
 
       getColor = (value: any) => colorsDict[value];
@@ -133,14 +136,20 @@ export function getNodeSizes(
     const field = fieldsIndex[nodeSizeField];
 
     if (field.type === "quanti") {
+      
       const getSize = (value: any, nodeData: any): number => {
-        console.log("value", value, nodeData)
-        const size =
-          typeof value === "number"
-            ? ((NODE_SIZE_MAX - NODE_SIZE_MIN) * (value - field.min)) / (field.max - field.min) + NODE_SIZE_MIN
-            : NODE_DEFAULT_SIZE;
-        return size * ratio * screenSizeRatio * graphSizeRatio;
+        if (nodeData.label === "ASES" || nodeData.label === "ASSMCA"){
+          return 20;
+        } else {
+          const size =
+            typeof value === "number"
+              ? ((NODE_SIZE_MAX - NODE_SIZE_MIN) * (value - field.min)) / (field.max - field.min) + NODE_SIZE_MIN
+              : NODE_DEFAULT_SIZE;
+          return size * ratio * screenSizeRatio * graphSizeRatio;
+        }
+        
       };
+
       graph.forEachNode((node, nodeData) => {
         nodeSizes![node] = getSize!(getValue(nodeData, field), nodeData);
       });
