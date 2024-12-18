@@ -21,12 +21,14 @@ export const Profile = ({filteredAttributes, node, isHidden, currentAttributes}:
   const nodeType = currentAttributes.attributes.value;
   const cleanValue = {
     "individual": "Individuo",
-    "corporation": "Corporacion",
+    "corporation": "Corporación",
     "government_entity": "Entidad Gubernamental",
     "Junta de directores": "Junta de Directores",
-    "position": "Posicion",
-    "politician": "Politico"
+    "position": "Posición",
+    "politician": "Político",
+    "Secretario": "Secretario"
   }
+  
   return (
     <div>
       <h1 className="fs-4 mt-4">

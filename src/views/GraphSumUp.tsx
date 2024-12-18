@@ -38,7 +38,7 @@ const GraphSumUp: FC = () => {
   return (
     <div className="graph-sumup-block block">
       <h1 className="fs-4 mt-4">
-        <BiNetworkChart /> Graph overview
+        <BiNetworkChart /> Resumen del Grafo
       </h1>
 
       <br />
@@ -59,15 +59,15 @@ const GraphSumUp: FC = () => {
       )}
 
       <h2 className="fs-5">
-        {nodesVisible.toLocaleString()} node{nodesVisible > 1 ? "s" : ""}
+        {nodesVisible.toLocaleString()} nodo{nodesVisible > 1 ? "s" : ""}
         {hasFilter ? (
-          <small className="ms-2">{((nodesVisible / nodesTotal) * 100).toFixed(1)}% of full graph</small>
+          <small className="ms-2">{((nodesVisible / nodesTotal) * 100).toFixed(1)}% del grafo</small>
         ) : null}
       </h2>
       <h2 className="fs-5">
-        {edgesVisible.toLocaleString()} edge{edgesVisible > 1 ? "s" : ""}
+        {edgesVisible.toLocaleString()} conexione{edgesVisible > 1 ? "s" : ""}
         {hasFilter ? (
-          <small className="ms-2">{((edgesVisible / edgesTotal) * 100).toFixed(1)}% of full graph</small>
+          <small className="ms-2">{((edgesVisible / edgesTotal) * 100).toFixed(1)}% del grafo</small>
         ) : null}
       </h2>
 
@@ -85,16 +85,14 @@ const GraphSumUp: FC = () => {
             <MdOutlineOpenInNew />
           </a>
         )}
-        <button className="btn btn-outline-dark me-2 mt-1" onClick={downloadData} disabled={!!navState.local}>
-          <FaFileDownload /> Download dataset
-        </button>
+
         {navState.role !== "v" && (
           <button
             className="btn btn-outline-dark mt-1"
             disabled={!navState.filters}
             onClick={() => setNavState({ ...navState, filters: undefined })}
           >
-            <RiFilterOffFill /> Clear all filters
+            <RiFilterOffFill /> Remover filtros
           </button>
         )}
       </div>

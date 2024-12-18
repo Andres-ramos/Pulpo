@@ -42,7 +42,7 @@ const ReadabilityBlock: FC = () => {
   return (
     <div className="readability-block block">
       <h1 className="fs-4 mt-4">
-        <GiSettingsKnobs /> Readability settings
+        <GiSettingsKnobs /> Visibilidad
       </h1>
 
       <br />
@@ -54,7 +54,7 @@ const ReadabilityBlock: FC = () => {
           onClick={cancel}
           disabled={isEqual(navState, initialNavState)}
         >
-          <FaUndo /> Cancel modifications
+          <FaUndo /> Cancelar modificaciones
         </button>
       </div>
 
@@ -63,7 +63,7 @@ const ReadabilityBlock: FC = () => {
       <div className="mb-3">
         <h3 className="fs-6 form-label with-end-buttons">
           <label>
-            Label sizes <small>(select min and max)</small>
+          Tamaño de etiqueta <small>(min y max)</small>
           </label>
           <button
             className={cx(
@@ -73,7 +73,7 @@ const ReadabilityBlock: FC = () => {
             disabled={typeof navState.minLabelSize !== "number" && typeof navState.maxLabelSize !== "number"}
             onClick={() => setNavState({ ...navState, minLabelSize: undefined, maxLabelSize: undefined })}
           >
-            <FaTimes /> Restore default
+            <FaTimes /> Restaurar predeterminados
           </button>
         </h3>
         <div className="pb-3">
@@ -102,7 +102,7 @@ const ReadabilityBlock: FC = () => {
 
       <div className="mb-3">
         <h3 className="fs-6 form-label with-end-buttons">
-          <label>Node sizes</label>
+          <label>Tamaño de nodo</label>
           <button
             className={cx(
               "btn btn-ico btn-sm btn-outline-dark",
@@ -111,7 +111,7 @@ const ReadabilityBlock: FC = () => {
             disabled={typeof navState.nodeSizeRatio !== "number"}
             onClick={() => setNavState({ ...navState, nodeSizeRatio: undefined })}
           >
-            <FaTimes /> Restore default
+            <FaTimes /> Restaurar predeterminados
           </button>
         </h3>
         <div className="pb-3">
@@ -138,7 +138,7 @@ const ReadabilityBlock: FC = () => {
 
       <div className="mb-3">
         <h3 className="fs-6 form-label with-end-buttons">
-          <label>Edge sizes</label>
+          <label>Tamaño de conexión</label>
           <button
             className={cx(
               "btn btn-ico btn-sm btn-outline-dark",
@@ -147,7 +147,7 @@ const ReadabilityBlock: FC = () => {
             disabled={typeof navState.edgeSizeRatio !== "number"}
             onClick={() => setNavState({ ...navState, edgeSizeRatio: undefined })}
           >
-            <FaTimes /> Restore default
+            <FaTimes /> Restaurar predeterminados
           </button>
         </h3>
         <div className="pb-3">
@@ -174,7 +174,7 @@ const ReadabilityBlock: FC = () => {
 
       <div className="mb-3">
         <h3 className="fs-6 form-label with-end-buttons">
-          <label>Labels on screen</label>
+          <label>Etiquetas en pantalla</label>
           <button
             className={cx(
               "btn btn-ico btn-sm btn-outline-dark",
@@ -183,7 +183,7 @@ const ReadabilityBlock: FC = () => {
             disabled={typeof navState.labelThresholdRatio !== "number"}
             onClick={() => setNavState({ ...navState, labelThresholdRatio: undefined })}
           >
-            <FaTimes /> Restore default
+            <FaTimes /> Restaurar predeterminados
           </button>
         </h3>
         <div className="pb-3">
@@ -194,13 +194,13 @@ const ReadabilityBlock: FC = () => {
             step={LABEL_THRESHOLD_STEP}
             marks={{
               [MIN_LABEL_THRESHOLD]: {
-                label: "(less labels)",
+                label: "(menos etiquetas)",
                 style: {
                   transform: "translateX(0)",
                 },
               },
               [MAX_LABEL_THRESHOLD]: {
-                label: "(more labels)",
+                label: "(más etiquetas)",
                 style: {
                   whiteSpace: "nowrap",
                   transform: "translateX(-100%)",

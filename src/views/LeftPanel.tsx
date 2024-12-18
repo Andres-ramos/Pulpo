@@ -36,7 +36,6 @@ const LeftPanel: FC = () => {
     content = (
       <>
         <GraphSumUp />
-        <NodesAppearanceBlock />
         <Filters />
       </>
     );

@@ -18,6 +18,16 @@ import { getFontColor } from "../utils/color";
 import { shortenNumber } from "../utils/number";
 import { normalize } from "../utils/string";
 
+const cleanValue = {
+  "individual": "Individuo",
+  "corporation": "Corporación",
+  "government_entity": "Entidad Gubernamental",
+  "Junta de directores": "Junta de Directores",
+  "position": "Posición",
+  "politician": "Político",
+  "Secretario": "Secretario"
+}
+
 const SearchFilterComponent: FC<{
   field: ContentField;
   data: SearchMetrics;
@@ -30,6 +40,7 @@ const SearchFilterComponent: FC<{
     setValue(filter?.value || "");
   }, [filter?.value]);
 
+  
   return (
     <form
       className="d-flex flex-row"
@@ -92,11 +103,11 @@ const TermsFilterComponent: FC<{
         <button className="btn btn-outline-dark btn-sm" onClick={() => setAlphaSort((v) => !v)}>
           {alphaSort ? (
             <>
-              <BsSortDown /> Sort by values
+              <BsSortDown /> Ordenar por valores
             </>
           ) : (
             <>
-              <BsSortAlphaDown /> Sort alphabetically
+              <BsSortAlphaDown /> Ordernar por orden alfabetico
             </>
           )}
         </button>
@@ -105,7 +116,7 @@ const TermsFilterComponent: FC<{
         {values.map((v) => {
           const id = `terms-filters-${field.id}-${v.id}`;
           const state = !filteredValues ? "idle" : filteredValues.has(v.id) ? "checked" : "unchecked";
-
+          console.log(v)
           return (
             <li
               key={id}
@@ -149,10 +160,10 @@ const TermsFilterComponent: FC<{
                   <BiCheckbox className="fs-5 mb-1 align-middle" />
                 )}
                 <span>
-                  {v.label}{" "}
+                  {cleanValue[v.label]}{" "}
                   {v.filteredCount > 0 && (
                     <small className="text-muted">
-                      ({v.filteredCount} node{v.filteredCount > 1 ? "s" : ""})
+                      ({v.filteredCount} nodo{v.filteredCount > 1 ? "s" : ""})
                     </small>
                   )}
                 </span>
@@ -242,7 +253,7 @@ const RangeFilterComponent: FC<{
         {ranges.map((range) => {
           const filteredHeight = (range.filteredCount / maxCount) * 100;
           const isLabelInside = filteredHeight > 90;
-          const bgColor = getColor ? getColor(mean([range.min, range.max])) : "#343a40";
+          const bgColor = getColor ? getColor(mean([range.min, range.max])) : "#171f00";
           const fontColor = getFontColor(bgColor);
 
           return (
@@ -293,7 +304,7 @@ const RangeFilterComponent: FC<{
           }}
         >
           <span>
-            Filter from{" "}
+            Filtrar desde{" "}
             <input
               type="number"
               className="input-inline"
@@ -303,7 +314,7 @@ const RangeFilterComponent: FC<{
               value={inputValues.min}
               onChange={(e) => setInputValues((o) => ({ ...o, min: +e.target.value }))}
             />{" "}
-            to{" "}
+            hasta{" "}
             <input
               type="number"
               className="input-inline"
@@ -319,7 +330,7 @@ const RangeFilterComponent: FC<{
             disabled={inputValues.min === currentMin && inputValues.max === currentMax}
             type="submit"
           >
-            <BsSortAlphaDown /> Update filters
+            <BsSortAlphaDown /> Actualizar filtros
           </button>
         </form>
       )}
@@ -336,7 +347,10 @@ const FilterWrapper: FC<{
   children?: React.ReactNode;
 }> = ({ title, subtitle, clearFilter, children, isColorField, isSizeField }) => {
   const [expanded, setExpanded] = useState(!!isColorField || !!clearFilter);
-
+  const categoryMap = {
+    value: "Tipos de Nodos",
+    Degree: "Grados de Nodos"
+  }
   return (
     <div className="mb-3">
       <h4 className="fs-6 with-end-buttons">
@@ -344,7 +358,7 @@ const FilterWrapper: FC<{
           {isColorField && <BsPaletteFill className="me-1" />}
           {isSizeField && <MdBubbleChart className="me-1" />}
           <div className={subtitle ? "line-height-1" : undefined}>
-            {title} {subtitle && <div className="text-muted">{subtitle}</div>}
+            {categoryMap[title]} {subtitle && <div className="text-muted">{subtitle}</div>}
           </div>
         </div>
 
@@ -353,7 +367,7 @@ const FilterWrapper: FC<{
           disabled={!clearFilter}
           onClick={clearFilter}
         >
-          <RiFilterOffFill /> Clear filter
+          <RiFilterOffFill /> Remover filtros
         </button>
         <button className="btn btn-ico btn-sm btn-outline-dark ms-1" onClick={() => setExpanded((v) => !v)}>
           {expanded ? <BsChevronUp /> : <BsChevronDown />}
@@ -398,7 +412,6 @@ const Filters: FC = () => {
         const metric = computedData.metrics[field.id];
 
         if (!metric || !field) return null;
-
         switch (field.type) {
           case "quanti":
             return (
