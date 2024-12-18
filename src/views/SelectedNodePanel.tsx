@@ -14,6 +14,8 @@ import { NodeData } from "../lib/data";
 
 import {ConnectionList} from "../components/ConnectionList"
 
+import {Profile} from "./profiles/Profile";
+
 const HIDDEN_KEYS = new Set(["x", "y", "z", "size", "label", "color"]);
 
 const SelectedNodePanel: FC<{ node: string; data: NodeData }> = ({ node, data: { attributes } }) => {
@@ -40,64 +42,12 @@ const SelectedNodePanel: FC<{ node: string; data: NodeData }> = ({ node, data: {
   });
 
   const isHidden = filteredNodes && !filteredNodes.has(node);
+  const nodeType = currentAttributes.attributes.value
 
   return (
     <div className="selected-nodes-block block">
-      <h1 className="fs-4 mt-4">
-        {/* How do you make the circle bigger? */}
-        <div className="node-profile">
-          <span className={cx("me-2", isHidden ? "circle" : "disc")} style={{ background: currentAttributes.color, fontSize:80, borderColor:'black'}} />
-          <h2 className="text">
-            <div className="profile-text">
-              <h2 className="profile-name"> {currentAttributes.label} </h2>
-              <p className="profile-type"> {currentAttributes.attributes.value}</p>
-            </div>
-          </h2>
-          
-        </div>
-        {isHidden ? (
-          <>
-            {" "}
-            <small className="text-muted">(currently filtered out)</small>
-          </>
-        ) : null}
-      </h1>
-
-      <br />
-      {/* This should be rendered conditionally */}
-      {map(filteredAttributes, (value, key) => (
-        <h2 key={key} className="fs-5 ellipsis">
-          <small className="text-muted">{startCase(key)}:</small>{" "}
-          <span title={value}>
-            {typeof value === "number" ? value.toLocaleString() : <Linkify {...DEFAULT_LINKIFY_PROPS}>{value}</Linkify>}
-          </span>
-        </h2>
-      ))}
-
-      {/* Make this into a component */}
-      <div>
-        <button
-          className="btn btn-outline-dark mt-1 me-2"
-          onClick={() => setNavState({ ...navState, selectedNode: undefined })}
-        >
-          <FaTimes /> Unselect
-        </button>
-        <button
-          className="btn btn-outline-dark mt-1"
-          onClick={() => {
-            if (!sigma) return;
-            const nodePosition = sigma.getNodeDisplayData(node) as Coordinates;
-            sigma.getCamera().animate(
-              { ...nodePosition, ratio: 0.3 },
-              {
-                duration: ANIMATION_DURATION,
-              },
-            );
-          }}
-        >
-          <BiRadioCircleMarked /> Show on graph
-        </button>
-      </div>
+         
+      <Profile filteredAttributes={filteredAttributes} node={node} isHidden={isHidden} currentAttributes={currentAttributes} />
 
       <br />      
       <hr />
@@ -107,7 +57,7 @@ const SelectedNodePanel: FC<{ node: string; data: NodeData }> = ({ node, data: {
       {!!visibleNeighbors.length && (
         <>
           <div className="text-muted mb-2 mt-4">
-            Tentaculos: {visibleNeighbors.length}{" "}
+            Conexiones : {visibleNeighbors.length}{" "}
           </div>
           <ConnectionList visibleNeighbors={visibleNeighbors} node={node}/>
         </>
@@ -115,7 +65,7 @@ const SelectedNodePanel: FC<{ node: string; data: NodeData }> = ({ node, data: {
 
       {/* TODO: Modularize summary */}
       {/* Poner summary de las corporaciones */}
-      {!!hiddenNeighbors.length && (
+      {/* {!!hiddenNeighbors.length && (
         <>
           <div className="text-muted mb-2 mt-4">
             This node{!!visibleNeighbors.length ? " also" : ""} has{" "}
@@ -124,7 +74,7 @@ const SelectedNodePanel: FC<{ node: string; data: NodeData }> = ({ node, data: {
           </div>
           <ConnectionList visibleNeighbors={hiddenNeighbors} node={node}/>
         </>
-      )}
+      )} */}
     </div>
   );
 };

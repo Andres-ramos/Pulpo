@@ -5,14 +5,15 @@
 
 .node-profile {
     display: flex;
+    width:inherit;
     
     .profile-text {
         text-align: 'center';
-        width: auto;
+        width: 100%;
+        padding-left: 5%;
 
         .profile-name {
             font-weight: bolder;
-            margin:auto
         }
         
         .profile-type {
@@ -20,10 +21,14 @@
             margin:auto;
             font-size: medium;
         }
-
     }
 
 
+}
+
+.profile-data {
+  margin-left: 2%;
+  margin-top: 2%
 }
 
 .conn-card {
@@ -45,4 +50,16 @@
   height: 50px;
   border-radius: 50%;
   background-color: #f00;
+}
+
+.nav-button {
+  margin-left: 10%;
+  margin-top: 10%;
+  // left
+}
+
+.button-menu {
+  width: full;
+  background: #000;
+
 }
