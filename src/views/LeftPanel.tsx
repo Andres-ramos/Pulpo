@@ -66,7 +66,7 @@ const LeftPanel: FC = () => {
               disabled={panel === "main"}
               title="Explore the graph"
             >
-              <MdOutlinePreview /> Explore
+              <MdOutlinePreview /> Explorar
             </button>
             <button
               className={cx("btn ms-2 mt-1", panel === "readability" ? selectedButtonClass : "btn-outline-black bg-primary")}
@@ -76,17 +76,6 @@ const LeftPanel: FC = () => {
             >
               <GiSettingsKnobs />
             </button>
-          </span>
-          <span className="text-nowrap">
-            {!embedMode && (
-              <button
-                className={cx("btn btn-outline-dark ms-2 mt-1", !!navState.local && "text-danger")}
-                title="Share this visualization"
-                onClick={() => openModal(navState.local ? "publish" : "share")}
-              >
-                <BsShare />
-              </button>
-            )}
           </span>
         </div>
       </div>

@@ -48,7 +48,7 @@ export const Profile = ({filteredAttributes, node, isHidden, currentAttributes}:
         ) : null}
       </h1>
       <NodeInformation nodeType={nodeType} filteredAttributes={filteredAttributes}/>
-      <div>
+      <div className="button-menu">
         <button
             className="nav-button btn btn-outline-dark mt-1 me-2"
             onClick={() => setNavState({ ...navState, selectedNode: undefined })}
