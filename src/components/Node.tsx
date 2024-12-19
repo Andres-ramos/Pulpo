@@ -27,16 +27,16 @@ const Node: FC<{
 
 
   const linkStyle = {
-    margin: "1rem",
     textDecoration: "none",
     color: 'black',
-    fontWeight:"bold"
+    fontWeight:"bold",
+    fontSize: 16
   };
 
   return link ? (
     <div >
       <Link
-        className={cx(baseClassName, className)}
+        className={cx( className)}
         onMouseEnter={() => setHovered(node)}
         onMouseLeave={() => setHovered(undefined)}
         to={"/graph/?" + navStateToQueryURL({ ...navState, selectedNode: node })}

@@ -84,7 +84,10 @@ export function applyEdgeColors(
       "incorporator":"#3c4b02",
       "contract": "#3c4b02",
       "donation": "#3c4b02",
-      "junta_directores": "#3c4b02"
+      "junta_directores": "#3c4b02",
+      "dirige": "#3c4b02",
+      "position": "#3c4b02",
+      "is": "#3c4b02"
     }
     return colorMap[data.attributes.label]
   };
