@@ -4,7 +4,7 @@
   "homepage": "https://github.com/Andres-ramos/Pulpo",
   "scripts": {
     "start": "vite",
-    "build": "vite build --base=./",
+    "build": "vite build --base=/",
     "preview": "vite preview",
     "test": "vitest",
     "clean": "prettier --write src",
