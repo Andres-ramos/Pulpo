@@ -17,14 +17,14 @@ const Root: FC = () => {
   return (
     <AuthProvider>
       <Routes>
-        <Route path="/" element={<GraphView />} />
+        <Route path="/" element={<HomeView />} />
         {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/graph" element={
+        <Route path="/graph" element={
             // <ProtectedRoute>
               <GraphView />
             // </ProtectedRoute>
           } 
-          /> */}
+          />
       </Routes>
     </AuthProvider>        
   );
