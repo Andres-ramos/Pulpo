@@ -116,7 +116,6 @@ const TermsFilterComponent: FC<{
         {values.map((v) => {
           const id = `terms-filters-${field.id}-${v.id}`;
           const state = !filteredValues ? "idle" : filteredValues.has(v.id) ? "checked" : "unchecked";
-          console.log(v)
           return (
             <li
               key={id}

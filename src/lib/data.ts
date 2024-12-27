@@ -188,10 +188,33 @@ export function prepareGraph(rawGraph: RawGraph): { graph: RetinaGraph; report: 
     if (typeof attributes.color !== "string") report.missingNodeColors = (report.missingNodeColors || 0) + 1;
     if (typeof attributes.label !== "string") report.missingNodeLabels = (report.missingNodeLabels || 0) + 1;
 
+    // Checks if node is individual or corporation to capitalize accordingly
+    let l = label;
+    if(attributes.value == "individual"){
+      const parts = attributes.label.split(" ");
+      const capitalizedParts = parts.map(part => {
+        return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+      });
+      l = capitalizedParts.join(" ")
+    }
+    
+    if(attributes.value == "corporation"){
+      const parts = attributes.label.split(" ");
+      const capitalizedParts = parts.map(part => {
+        if(part == "llc" || part == "llp" || part == "psc"){
+          return part.toUpperCase()
+        } else {
+          return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+        }
+        
+      });
+      l = capitalizedParts.join(" ")
+    }
+
     const newNodeAttributes: NodeData = {
       x: typeof x === "number" ? x : 0,
       y: typeof y === "number" ? y : 0,
-      label: typeof label === "string" ? label : node,
+      label: l,
       size: typeof size === "number" ? size : NODE_DEFAULT_SIZE,
       rawSize: typeof size === "number" ? size : NODE_DEFAULT_SIZE,
       color: typeof color === "string" ? color : DEFAULT_NODE_COLOR,

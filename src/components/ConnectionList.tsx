@@ -18,7 +18,9 @@ export const ConnectionList = ({visibleNeighbors, node}: any) => {
     "vice_presidente": "Vice Presidente",
     "agent": "Agente Residente",
     "incorporator": "Incorporador",
-    "contract": "Contrato"
+    "contract": "Contrato",
+    "CFO": "CFO",
+    "tesorero": "Tesorero"
     
   }
   return (
