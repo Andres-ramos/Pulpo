@@ -47,7 +47,7 @@ const HomeView: FC = () => {
           </span>
         </h1>
         <h2 className="h4 text-center">
-          Pulpo-o es una aplicacion para entender los problemas que enfrentamos quienes sabemos que un mejor Puerto Rico es posible
+          <strong> Definición: </strong> Un <i> <u> pulpo </u></i> es una criatura con tentaculos en el sector <i> privado </i> y en las agencias <i> publicas </i> que <u> fiscalizan </u> ese sector. 
         </h2>
         <div>
           <div className={cx("gexf-form", "text-center", "mt-4", state.type === "hidden" && "opacity-0")}>
@@ -58,7 +58,7 @@ const HomeView: FC = () => {
                 }}
               >
                 <button type="submit" className="btn btn-lg viz-button mt-2 text-dark font-weight-bold">
-                  Visualizar
+                 Visualizar
                 </button>
               </form>
             
