@@ -201,7 +201,7 @@ export function prepareGraph(rawGraph: RawGraph): { graph: RetinaGraph; report: 
     if(attributes.value == "corporation"){
       const parts = attributes.label.split(" ");
       const capitalizedParts = parts.map(part => {
-        if(part == "llc" || part == "llp" || part == "psc"){
+        if(part == "llc" || part == "llp" || part == "psc" || "ii" || 'iii'){
           return part.toUpperCase()
         } else {
           return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
