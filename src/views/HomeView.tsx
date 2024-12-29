@@ -47,7 +47,7 @@ const HomeView: FC = () => {
           </span>
         </h1>
         <h2 className="h4 text-center">
-          <strong> Definición: </strong> Un <i> <u> pulpo </u></i> es una criatura con tentaculos en el sector <i> privado </i> y en las agencias <i> publicas </i> que <u> fiscalizan </u> ese sector. 
+          <strong> Definición: </strong> Un <i> <u> pulpo </u></i> es una criatura con tentáculos en el sector <i> privado </i> y en las agencias <i> públicas </i> que <u>fiscalizan</u> ese sector. 
         </h2>
         <div>
           <div className={cx("gexf-form", "text-center", "mt-4", state.type === "hidden" && "opacity-0")}>
