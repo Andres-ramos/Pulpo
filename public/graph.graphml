@@ -22,510 +22,470 @@
   <key id="d0" for="node" attr.name="label" attr.type="string" />
   <graph edgedefault="undirected">
     <node id="0">
-      <data key="d0">cancio covas &amp; santiago, llp</data>
-      <data key="d1">corporation</data>
-    </node>
-    <node id="1">
-      <data key="d0">metro pavia hospital group llc</data>
-      <data key="d1">corporation</data>
-      <data key="d2">429836-1511</data>
-      <data key="d3">429836</data>
-      <data key="d4">806502</data>
-      <data key="d5">L.L.C.</data>
-    </node>
-    <node id="2">
-      <data key="d0">artau holdings, llc</data>
-      <data key="d1">corporation</data>
-      <data key="d2">342129-1511</data>
-      <data key="d3">342129</data>
-      <data key="d4">681369</data>
-      <data key="d5">L.L.C.</data>
-    </node>
-    <node id="3">
-      <data key="d0">metro healthcare management systems, inc.</data>
-      <data key="d1">corporation</data>
-      <data key="d2">316340-111</data>
-      <data key="d3">316340</data>
-      <data key="d4">628535</data>
-      <data key="d5">Corporation</data>
-    </node>
-    <node id="4">
-      <data key="d0">metro pavia healthcare centers, inc.</data>
-      <data key="d1">corporation</data>
-      <data key="d2">316338-111</data>
-      <data key="d3">316338</data>
-      <data key="d4">628533</data>
-      <data key="d5">Corporation</data>
-    </node>
-    <node id="5">
-      <data key="d0">metro holdings, inc.</data>
-      <data key="d1">corporation</data>
-      <data key="d2">162852-111</data>
-      <data key="d3">162852</data>
-      <data key="d4">81208</data>
-      <data key="d5">Corporation</data>
-    </node>
-    <node id="6">
-      <data key="d0">carlos santiago sarkis</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="7">
       <data key="d0">miglisa capo</data>
       <data key="d1">individual</data>
     </node>
-    <node id="8">
+    <node id="1">
       <data key="d0">metro pavia health system, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">305979-1011</data>
       <data key="d3">305979</data>
       <data key="d4">429129</data>
-      <data key="d5">Close Corp.</data>
+      <data key="d5">Corp. Intima</data>
     </node>
-    <node id="9">
+    <node id="2">
       <data key="d0">metro pavia at home llc</data>
       <data key="d1">corporation</data>
       <data key="d2">336865-1511</data>
       <data key="d3">336865</data>
       <data key="d4">654906</data>
-      <data key="d5">L.L.C.</data>
+      <data key="d5">Comp. Resp. Limitada</data>
     </node>
-    <node id="10">
+    <node id="3">
       <data key="d0">metro santurce, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">162855-111</data>
       <data key="d3">162855</data>
       <data key="d4">81211</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="11">
+    <node id="4">
       <data key="d0">metro hato rey, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">162854-111</data>
       <data key="d3">162854</data>
       <data key="d4">81210</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="12">
+    <node id="5">
       <data key="d0">metro mayaguez, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">162856-111</data>
       <data key="d3">162856</data>
       <data key="d4">81212</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="19">
+    <node id="12">
       <data key="d0">carmen feliciano vargas</data>
       <data key="d1">individual</data>
     </node>
-    <node id="16">
+    <node id="9">
       <data key="d0">metrohealth, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">100340-111</data>
       <data key="d3">100340</data>
       <data key="d4">456</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="17">
+    <node id="10">
       <data key="d0">san francisco health system, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">161553-111</data>
       <data key="d3">161553</data>
       <data key="d4">79595</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="18">
+    <node id="11">
       <data key="d0">yauco healthcare corporation</data>
       <data key="d1">corporation</data>
       <data key="d2">130914-111</data>
       <data key="d3">130914</data>
       <data key="d4">40210</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="13">
+    <node id="6">
       <data key="d0">metrohealth central corporation</data>
       <data key="d1">corporation</data>
       <data key="d2">157952-111</data>
       <data key="d3">157952</data>
       <data key="d4">75143</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="14">
+    <node id="7">
       <data key="d0">southwest health corp.</data>
       <data key="d1">corporation</data>
       <data key="d2">100950-111</data>
       <data key="d3">100950</data>
       <data key="d4">1267</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="15">
+    <node id="8">
       <data key="d0">fundacion metro pavia inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">400044-121</data>
       <data key="d3">400044</data>
       <data key="d4">765467</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="20">
+    <node id="13">
+      <data key="d0">metro holdings, inc.</data>
+      <data key="d1">corporation</data>
+      <data key="d2">162852-111</data>
+      <data key="d3">162852</data>
+      <data key="d4">81208</data>
+      <data key="d5">Corporación</data>
+    </node>
+    <node id="14">
       <data key="d0">international medical card,inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">78813-111</data>
       <data key="d3">78813</data>
       <data key="d4">252080</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="21">
+    <node id="15">
       <data key="d0">execumed corp.</data>
       <data key="d1">corporation</data>
       <data key="d2">14164-112</data>
       <data key="d3">14164</data>
       <data key="d4">54037</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="22">
+    <node id="16">
       <data key="d0">eja management services llc</data>
       <data key="d1">corporation</data>
       <data key="d2">438696-1511</data>
       <data key="d3">438696</data>
       <data key="d4">815949</data>
-      <data key="d5">L.L.C.</data>
+      <data key="d5">Comp. Resp. Limitada</data>
     </node>
-    <node id="32">
+    <node id="27">
       <data key="d0">karen artau feliciano</data>
       <data key="d1">individual</data>
     </node>
-    <node id="24">
+    <node id="19">
       <data key="d0">aps healthcare puerto rico, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">104885-111</data>
       <data key="d3">104885</data>
       <data key="d4">6511</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="33">
+    <node id="28">
       <data key="d0">eduardo artau gomez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="34">
+    <node id="29">
       <data key="d0">metrohealth radiation oncology group, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">106192-111</data>
       <data key="d3">106192</data>
       <data key="d4">8177</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="23">
+    <node id="18">
       <data key="d0">a.m.m.v.r. group inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">110390-111</data>
       <data key="d3">110390</data>
       <data key="d4">13534</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="28">
+    <node id="23">
       <data key="d0">three a group llc</data>
       <data key="d1">corporation</data>
       <data key="d2">447001-1511</data>
       <data key="d3">447001</data>
       <data key="d4">826970</data>
-      <data key="d5">L.L.C.</data>
+      <data key="d5">Comp. Resp. Limitada</data>
     </node>
-    <node id="29">
+    <node id="24">
       <data key="d0">costa bahia hotel and convention center llc</data>
       <data key="d1">corporation</data>
       <data key="d2">355134-111</data>
       <data key="d3">355134</data>
       <data key="d4">698634</data>
-      <data key="d5">L.L.C.</data>
+      <data key="d5">Comp. Resp. Limitada</data>
     </node>
-    <node id="31">
+    <node id="26">
       <data key="d0">hrnc group llc</data>
       <data key="d1">corporation</data>
       <data key="d2">470322-1511</data>
       <data key="d3">470322</data>
       <data key="d4">852104</data>
-      <data key="d5">L.L.C.</data>
+      <data key="d5">Comp. Resp. Limitada</data>
     </node>
-    <node id="37">
+    <node id="17">
+      <data key="d0">metro healthcare management systems, inc.</data>
+      <data key="d1">corporation</data>
+      <data key="d2">316340-111</data>
+      <data key="d3">316340</data>
+      <data key="d4">628535</data>
+      <data key="d5">Corporación</data>
+    </node>
+    <node id="32">
       <data key="d0">francisco pares alicea</data>
       <data key="d1">individual</data>
     </node>
-    <node id="38">
+    <node id="33">
+      <data key="d0">cancio covas &amp; santiago, llp</data>
+      <data key="d1">corporation</data>
+    </node>
+    <node id="34">
+      <data key="d0">metro pavia hospital group llc</data>
+      <data key="d1">corporation</data>
+      <data key="d2">429836-1511</data>
+      <data key="d3">429836</data>
+      <data key="d4">806502</data>
+      <data key="d5">Comp. Resp. Limitada</data>
+    </node>
+    <node id="35">
+      <data key="d0">artau holdings, llc</data>
+      <data key="d1">corporation</data>
+      <data key="d2">342129-1511</data>
+      <data key="d3">342129</data>
+      <data key="d4">681369</data>
+      <data key="d5">Comp. Resp. Limitada</data>
+    </node>
+    <node id="30">
+      <data key="d0">metro pavia healthcare centers, inc.</data>
+      <data key="d1">corporation</data>
+      <data key="d2">316338-111</data>
+      <data key="d3">316338</data>
+      <data key="d4">628533</data>
+      <data key="d5">Corporación</data>
+    </node>
+    <node id="36">
+      <data key="d0">carlos santiago sarkis</data>
+      <data key="d1">individual</data>
+    </node>
+    <node id="37">
       <data key="d0">jacqueline lugo murillo</data>
       <data key="d1">individual</data>
     </node>
-    <node id="39">
+    <node id="38">
       <data key="d0">edgardo zayas  berdecia</data>
       <data key="d1">individual</data>
     </node>
-    <node id="40">
+    <node id="39">
       <data key="d0">awilda castro</data>
       <data key="d1">individual</data>
     </node>
-    <node id="41">
-      <data key="d0">dr. raul arroyo rosario</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="42">
-      <data key="d0">facultad medica hospital dr. susoni, inc.</data>
-      <data key="d1">corporation</data>
-      <data key="d2">410306-121</data>
-      <data key="d3">410306</data>
-      <data key="d4">780508</data>
-      <data key="d5">Corporation</data>
-    </node>
-    <node id="43">
-      <data key="d0">dr. guillermo rivera colon</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="44">
-      <data key="d0">dr. miguel roman pagan</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="45">
-      <data key="d0">dr. edwin candelario rosario</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="46">
-      <data key="d0">rene rocha rodriguez</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="47">
+    <node id="40">
       <data key="d0">cristina garcia hall</data>
       <data key="d1">individual</data>
     </node>
-    <node id="48">
+    <node id="41">
       <data key="d0">viavian solivan melendez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="27">
+    <node id="22">
       <data key="d0">imc salud inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">345375-1011</data>
       <data key="d3">345375</data>
       <data key="d4">685808</data>
-      <data key="d5">Close Corp.</data>
+      <data key="d5">Corp. Intima</data>
     </node>
-    <node id="49">
+    <node id="42">
       <data key="d0">milagros rivera</data>
       <data key="d1">individual</data>
     </node>
-    <node id="50">
+    <node id="43">
       <data key="d0">juan dominguez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="35">
+    <node id="31">
       <data key="d0">metrohealth extended care, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">100934-111</data>
       <data key="d3">100934</data>
       <data key="d4">1249</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="25">
+    <node id="20">
       <data key="d0">aps clinics of puerto rico, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">126550-111</data>
       <data key="d3">126550</data>
       <data key="d4">34515</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="26">
+    <node id="21">
       <data key="d0">first medical health plan, inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">38978-111</data>
       <data key="d3">38978</data>
       <data key="d4">175791</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="51">
+    <node id="44">
       <data key="d0">axtmayer adsuar muniz &amp; goyco psc</data>
       <data key="d1">corporation</data>
     </node>
-    <node id="52">
+    <node id="45">
       <data key="d0">juan luis dominguez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="53">
+    <node id="46">
       <data key="d0">betty gil</data>
       <data key="d1">individual</data>
     </node>
-    <node id="54">
+    <node id="47">
       <data key="d0">iris otero</data>
       <data key="d1">individual</data>
     </node>
-    <node id="55">
+    <node id="48">
       <data key="d0">alexis  cardona</data>
       <data key="d1">individual</data>
     </node>
-    <node id="56">
+    <node id="49">
       <data key="d0">jose pagan</data>
       <data key="d1">individual</data>
     </node>
-    <node id="57">
+    <node id="50">
       <data key="d0">francisco artau feliciano</data>
       <data key="d1">individual</data>
     </node>
-    <node id="30">
+    <node id="25">
       <data key="d0">fmi agency inc.</data>
       <data key="d1">corporation</data>
       <data key="d2">344609-111</data>
       <data key="d3">344609</data>
       <data key="d4">684769</data>
-      <data key="d5">Corporation</data>
+      <data key="d5">Corporación</data>
     </node>
-    <node id="58">
+    <node id="51">
       <data key="d0">celia molano</data>
       <data key="d1">individual</data>
     </node>
-    <node id="59">
+    <node id="52">
       <data key="d0">jesus a. soler</data>
       <data key="d1">individual</data>
     </node>
-    <node id="60">
+    <node id="53">
       <data key="d0">harry diaz</data>
       <data key="d1">individual</data>
     </node>
-    <node id="61">
+    <node id="54">
       <data key="d0">maria rivera</data>
       <data key="d1">individual</data>
     </node>
-    <node id="62">
+    <node id="55">
       <data key="d0">julio orengo</data>
       <data key="d1">individual</data>
     </node>
-    <node id="63">
+    <node id="56">
       <data key="d0">carlos fournier</data>
       <data key="d1">individual</data>
     </node>
-    <node id="64">
+    <node id="57">
       <data key="d0">three a group llc</data>
       <data key="d1">corporation</data>
     </node>
-    <node id="65">
+    <node id="58">
       <data key="d0">nestor centeno</data>
       <data key="d1">individual</data>
     </node>
-    <node id="66">
+    <node id="59">
       <data key="d0">eduardo artau feliciano</data>
       <data key="d1">individual</data>
     </node>
-    <node id="67">
-      <data key="d0">patricia serrano</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="36">
-      <data key="d0">rangelands inc.</data>
-      <data key="d1">corporation</data>
-      <data key="d2">330949-111</data>
-      <data key="d3">330949</data>
-      <data key="d4">648216</data>
-      <data key="d5">Corporation</data>
-    </node>
-    <node id="68">
+    <node id="60">
       <data key="d0">costa bahia hotel and convention center llc</data>
       <data key="d1">corporation</data>
     </node>
-    <node id="69">
+    <node id="61">
       <data key="d0">heidi serrano</data>
       <data key="d1">individual</data>
     </node>
-    <node id="70">
+    <node id="62">
       <data key="d0">carlos santana</data>
       <data key="d1">individual</data>
     </node>
-    <node id="71">
+    <node id="63">
       <data key="d0">marcos feliciano juarbe</data>
       <data key="d1">individual</data>
     </node>
-    <node id="72">
+    <node id="64">
       <data key="d0">hrnc group llc</data>
       <data key="d1">corporation</data>
     </node>
-    <node id="73">
+    <node id="65">
       <data key="d0">Thomas Rivera Schatz</data>
       <data key="d1">politician</data>
       <data key="d6">PNP</data>
     </node>
-    <node id="74">
+    <node id="66">
       <data key="d0">Hector Ferrer</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="75">
+    <node id="67">
       <data key="d0">Carlos Lopez Rivera</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="76">
+    <node id="68">
       <data key="d0">Pedro Pierluisi</data>
       <data key="d1">politician</data>
       <data key="d6">PNP</data>
     </node>
-    <node id="77">
+    <node id="69">
       <data key="d0">Eduardo Bhatia</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="78">
+    <node id="70">
       <data key="d0">Carlos Delgado</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="79">
+    <node id="71">
       <data key="d0">Carlos Carlitos Lopez</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="80">
+    <node id="72">
       <data key="d0">Luis Javier Hernandez</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="81">
+    <node id="73">
       <data key="d0">Miguel Romero</data>
       <data key="d1">politician</data>
       <data key="d6">PNP</data>
     </node>
-    <node id="82">
+    <node id="74">
       <data key="d0">Jose Aponte Dalmau</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="83">
+    <node id="75">
       <data key="d0">jesus Manuel Ortiz</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="84">
+    <node id="76">
       <data key="d0">Comite municipal de Utuado</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="85">
+    <node id="77">
       <data key="d0">Rossana Lopez</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="86">
+    <node id="78">
       <data key="d0">Jennifer Gonzalez</data>
       <data key="d1">politician</data>
       <data key="d6">PNP</data>
     </node>
-    <node id="87">
+    <node id="79">
       <data key="d0">Rafael Tatito Hernandez</data>
       <data key="d1">politician</data>
       <data key="d6">PPD</data>
     </node>
-    <node id="88">
+    <node id="80">
       <data key="d0">Wanda Vazquez</data>
       <data key="d1">politician</data>
       <data key="d6">PNP</data>
     </node>
-    <node id="89">
+    <node id="81">
       <data key="d0">Municipio de Barceloneta</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="90">
+    <node id="82">
       <data key="d0">ASES</data>
       <data key="d1">government_entity</data>
       <data key="d7">Administración de Seguros de Salud de Puerto Rico</data>
@@ -533,23 +493,23 @@
       <data key="d9">Ley Núm. 72 de 7 de Septiembre de 1993</data>
       <data key="d10">https://bvirtualogp.pr.gov/ogp/Bvirtual/leyesreferencia/PDF/Salud/72-1993.pdf</data>
     </node>
-    <node id="91">
+    <node id="83">
       <data key="d0">Municipio de Fajardo</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="92">
+    <node id="84">
       <data key="d0">Recinto de Ciencias Médicas de la Universidad de Puerto Rico</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="93">
+    <node id="85">
       <data key="d0">Recinto de Río Piedras de la Universidad de Puerto Rico</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="94">
+    <node id="86">
       <data key="d0">Policía de Puerto Rico</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="95">
+    <node id="87">
       <data key="d0">ASSMCA</data>
       <data key="d1">government_entity</data>
       <data key="d7">Administración de Servicios de Salud Mental y Contra la Adicción</data>
@@ -557,128 +517,128 @@
       <data key="d9">Ley Núm. 67 de 7 de agosto de 1993</data>
       <data key="d10">https://docs.pr.gov/files/ASSMCA/Leyes/LEY%2067-1993.pdf</data>
     </node>
-    <node id="96">
+    <node id="88">
       <data key="d0">Departamento de Salud</data>
       <data key="d1">government_entity</data>
     </node>
-    <node id="97">
+    <node id="89">
       <data key="d0">Junta de directores</data>
       <data key="d1">Junta de directores</data>
     </node>
-    <node id="98">
-      <data key="d0">secretario dept de salud</data>
+    <node id="90">
+      <data key="d0">Secretario Departamento de Salud</data>
       <data key="d1">position</data>
     </node>
-    <node id="99">
+    <node id="91">
       <data key="d0">Carlos Mellado</data>
       <data key="d1">individual</data>
     </node>
-    <node id="100">
-      <data key="d0">secretario hacienda</data>
+    <node id="92">
+      <data key="d0">Secretario Departamento de Hacienda</data>
       <data key="d1">position</data>
     </node>
-    <node id="101">
+    <node id="93">
       <data key="d0">Nelson Perez Mendez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="102">
-      <data key="d0">director ejectuvo OGP</data>
+    <node id="94">
+      <data key="d0">Director Ejectuvo OGP</data>
       <data key="d1">position</data>
     </node>
-    <node id="103">
+    <node id="95">
       <data key="d0">Juan C. Blanco</data>
       <data key="d1">individual</data>
     </node>
-    <node id="104">
-      <data key="d0">director ejectivo AAFAF</data>
+    <node id="96">
+      <data key="d0">Director Ejectivo AAFAF</data>
       <data key="d1">position</data>
     </node>
-    <node id="105">
-      <data key="d0">omar marrero</data>
+    <node id="97">
+      <data key="d0">Omar Marrero</data>
       <data key="d1">individual</data>
     </node>
-    <node id="106">
-      <data key="d0">administrador AASMCA</data>
+    <node id="98">
+      <data key="d0">Administrador AASMCA</data>
       <data key="d1">position</data>
     </node>
-    <node id="107">
-      <data key="d0">carmen bonet vazquez</data>
+    <node id="99">
+      <data key="d0">Carmen Bonet Vazquez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="108">
+    <node id="100">
       <data key="d0">carlos rodriguez mateo</data>
       <data key="d1">individual</data>
     </node>
-    <node id="109">
-      <data key="d0">comisionado de seguros</data>
+    <node id="101">
+      <data key="d0">Comisionado de Seguros</data>
       <data key="d1">position</data>
     </node>
-    <node id="110">
-      <data key="d0">alexander adams</data>
+    <node id="102">
+      <data key="d0">Alexander Adams</data>
       <data key="d1">individual</data>
     </node>
-    <node id="111">
-      <data key="d0">representante beneficiarios seguro medico-hospitalario</data>
+    <node id="103">
+      <data key="d0">Representante Beneficiarios Seguro Medico-Hospitalario</data>
       <data key="d1">position</data>
     </node>
-    <node id="112">
-      <data key="d0">proveedor competente dentro psg</data>
-      <data key="d1">position</data>
-    </node>
-    <node id="113">
-      <data key="d0">jorge hess riutort</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="114">
-      <data key="d0">proveedor participante competente</data>
-      <data key="d1">position</data>
-    </node>
-    <node id="115">
-      <data key="d0">sara lopez martin</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="116">
-      <data key="d0">representate del interes publico</data>
-      <data key="d1">position</data>
-    </node>
-    <node id="117">
-      <data key="d0">lilliam rodriguez</data>
-      <data key="d1">individual</data>
-    </node>
-    <node id="118">
-      <data key="d0">profesional competente industria de seguros</data>
-      <data key="d1">position</data>
-    </node>
-    <node id="119">
+    <node id="104">
       <data key="d0">Domingo Nevarez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="120">
-      <data key="d0">director</data>
+    <node id="105">
+      <data key="d0">Proveedor Competente dentro PSG</data>
       <data key="d1">position</data>
     </node>
-    <node id="121">
-      <data key="d0">roxana k. rosario</data>
+    <node id="106">
+      <data key="d0">Jorge Hess Riutort</data>
       <data key="d1">individual</data>
     </node>
-    <node id="122">
-      <data key="d0">edna marin</data>
+    <node id="107">
+      <data key="d0">Proveedor Participante Competente</data>
+      <data key="d1">position</data>
+    </node>
+    <node id="108">
+      <data key="d0">Sara Lopez Martin</data>
       <data key="d1">individual</data>
     </node>
-    <node id="123">
-      <data key="d0">jorge galva</data>
+    <node id="109">
+      <data key="d0">Representate del Interes Publico</data>
+      <data key="d1">position</data>
+    </node>
+    <node id="110">
+      <data key="d0">Lilliam Rodriguez</data>
       <data key="d1">individual</data>
     </node>
-    <node id="124">
-      <data key="d0">Secretario</data>
-      <data key="d1">Secretario</data>
+    <node id="111">
+      <data key="d0">Profesional Competente Industria de Seguros</data>
+      <data key="d1">position</data>
     </node>
-    <node id="125">
+    <node id="112">
+      <data key="d0">Director Ejecutivo</data>
+      <data key="d1">position</data>
+    </node>
+    <node id="113">
+      <data key="d0">Roxana K. Rosario</data>
+      <data key="d1">individual</data>
+    </node>
+    <node id="114">
+      <data key="d0">Edna Marin</data>
+      <data key="d1">individual</data>
+    </node>
+    <node id="115">
+      <data key="d0">Jorge Galva</data>
+      <data key="d1">individual</data>
+    </node>
+    <node id="116">
       <data key="d0">administrador</data>
       <data key="d1">position</data>
     </node>
+    <node id="117">
+      <data key="d0">carmen bonet vazquez</data>
+      <data key="d1">individual</data>
+    </node>
     <edge source="0" target="1">
-      <data key="d11">agent</data>
+      <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
@@ -702,818 +662,806 @@
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="1" target="6">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
+    <edge source="1" target="12">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
+    <edge source="1" target="27">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="1" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">vice_presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="1" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="1" target="104" />
     <edge source="2" target="47">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="3" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="3" target="48">
+    <edge source="3" target="12">
       <data key="d11">officer</data>
       <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="3" target="49">
+    <edge source="3" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="3" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="3" target="37">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="4" target="48">
+    <edge source="4" target="12">
       <data key="d11">officer</data>
       <data key="d12">secretario</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="4" target="49">
+    <edge source="4" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="4" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="4" target="37">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="5" target="19">
+    <edge source="4" target="38">
       <data key="d11">officer</data>
-      <data key="d12">secretario</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="5" target="12">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
     <edge source="5" target="32">
       <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="5" target="37">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="9">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="10">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="11">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="6">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="7">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="8">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="13">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="14">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="15">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="12" target="16">
+      <data key="d11">officer</data>
+      <data key="d12">secretario</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="9" target="28">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="9" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="10" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="10" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="10" target="39">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="11" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="6" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="6" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="7" target="28">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="7" target="32">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="8" target="27">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="13" target="27">
+      <data key="d11">officer</data>
       <data key="d12">vice_presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="5" target="33">
+    <edge source="13" target="28">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="5" target="38">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="5" target="50">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="5" target="55">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="7" target="8">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="7" target="9">
-      <data key="d11">agent</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="7" target="10">
-      <data key="d11">agent</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="7" target="11">
-      <data key="d11">agent</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="7" target="12">
-      <data key="d11">agent</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="8" target="19">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="8" target="32">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="8" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">vice_presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="8" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="8" target="119" />
-    <edge source="9" target="54">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="10" target="19">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="10" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="10" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="10" target="38">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="11" target="19">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="11" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="11" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="11" target="38">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="11" target="39">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="12" target="19">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="12" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="12" target="38">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="16">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="17">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="18">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="13">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="14">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="15">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="20">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="21">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="19" target="22">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="16" target="33">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="16" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="17" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="17" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="17" target="40">
-      <data key="d11">incorporator</data>
-      <data key="d12" />
-      <data key="d13">10</data>
-    </edge>
-    <edge source="18" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
       <data key="d13">10</data>
     </edge>
     <edge source="13" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
+      <data key="d11">agent</data>
+      <data key="d12" />
       <data key="d13">10</data>
     </edge>
     <edge source="13" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
+      <data key="d11">incorporator</data>
+      <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="14" target="33">
+    <edge source="13" target="43">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="13" target="48">
+      <data key="d11">officer</data>
+      <data key="d12">CFO</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="14" target="28">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="14" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
       <data key="d13">10</data>
     </edge>
     <edge source="15" target="32">
       <data key="d11">officer</data>
-      <data key="d12">presidente</data>
+      <data key="d12">CFO</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="20" target="33">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="21" target="37">
-      <data key="d11">officer</data>
-      <data key="d12">director</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="21" target="66">
+    <edge source="15" target="59">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="22" target="33">
+    <edge source="16" target="28">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="32" target="24">
+    <edge source="27" target="19">
       <data key="d11">officer</data>
       <data key="d12">vice_presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="32" target="73">
+    <edge source="27" target="65">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="32" target="81">
+    <edge source="27" target="73">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="32" target="87">
+    <edge source="27" target="79">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">3100.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="32" target="86">
+    <edge source="27" target="78">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">3000.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="32" target="78">
+    <edge source="27" target="70">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="32" target="76">
+    <edge source="27" target="68">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="32" target="88">
+    <edge source="27" target="80">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="24" target="33">
+    <edge source="19" target="28">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="24" target="50">
+    <edge source="19" target="43">
       <data key="d11">officer</data>
       <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="24" target="55">
+    <edge source="19" target="48">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="24" target="89">
+    <edge source="19" target="81">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">20000.0</data>
       <data key="d17">2014-000161</data>
     </edge>
-    <edge source="24" target="90">
+    <edge source="19" target="82">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2015-000101</data>
     </edge>
-    <edge source="24" target="91">
+    <edge source="19" target="83">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2011-000491</data>
     </edge>
-    <edge source="24" target="92">
+    <edge source="19" target="84">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2024-000891</data>
     </edge>
-    <edge source="24" target="93">
+    <edge source="19" target="85">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2014-000267</data>
     </edge>
-    <edge source="24" target="94">
+    <edge source="19" target="86">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2014-A00005</data>
     </edge>
-    <edge source="24" target="95">
+    <edge source="19" target="87">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">88230.0</data>
       <data key="d17">2016-950429</data>
     </edge>
-    <edge source="24" target="96">
+    <edge source="19" target="88">
       <data key="d11">contract</data>
       <data key="d16">10</data>
       <data key="d14">0.0</data>
       <data key="d17">2015-DS0912</data>
     </edge>
-    <edge source="33" target="34">
+    <edge source="28" target="29">
       <data key="d11">officer</data>
       <data key="d12">vice_presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="33" target="23">
+    <edge source="28" target="18">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="33" target="28">
+    <edge source="28" target="23">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="33" target="29">
+    <edge source="28" target="24">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="33" target="31">
+    <edge source="28" target="26">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="33" target="84">
+    <edge source="28" target="17">
+      <data key="d11">officer</data>
+      <data key="d12">presidente</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="28" target="76">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">750.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="33" target="76">
+    <edge source="28" target="68">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">1000.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="33" target="73">
+    <edge source="28" target="65">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="33" target="75">
+    <edge source="28" target="67">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="33" target="78">
+    <edge source="28" target="70">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="33" target="85">
+    <edge source="28" target="77">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2000.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="33" target="81">
+    <edge source="28" target="73">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="33" target="86">
+    <edge source="28" target="78">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">3000.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="34" target="51">
+    <edge source="29" target="44">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="34" target="52">
+    <edge source="29" target="45">
       <data key="d11">officer</data>
-      <data key="d12">director</data>
+      <data key="d12">CFO</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="34" target="53">
+    <edge source="29" target="46">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="28" target="57">
+    <edge source="23" target="50">
       <data key="d11">officer</data>
       <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="28" target="64">
+    <edge source="23" target="57">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="28" target="65">
+    <edge source="23" target="58">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="29" target="68">
+    <edge source="24" target="60">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="29" target="69">
+    <edge source="24" target="61">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="31" target="54">
+    <edge source="26" target="47">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="31" target="72">
+    <edge source="26" target="64">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="37" target="100" />
-    <edge source="41" target="42">
+    <edge source="17" target="33">
+      <data key="d11">agent</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="17" target="41">
+      <data key="d11">officer</data>
+      <data key="d12">tesorero</data>
+      <data key="d13">10</data>
+    </edge>
+    <edge source="17" target="42">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="42" target="43">
+    <edge source="32" target="92" />
+    <edge source="33" target="34">
+      <data key="d11">agent</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="33" target="35">
+      <data key="d11">agent</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="33" target="30">
+      <data key="d11">agent</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="34" target="36">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="35" target="40">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
+      <data key="d13">10</data>
+    </edge>
+    <edge source="30" target="41">
       <data key="d11">officer</data>
       <data key="d12">secretario</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="42" target="44">
-      <data key="d11">officer</data>
-      <data key="d12">tesorero</data>
+    <edge source="30" target="42">
+      <data key="d11">incorporator</data>
+      <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="42" target="45">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="42" target="46">
-      <data key="d11">officer</data>
-      <data key="d12">presidente</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="48" target="27">
+    <edge source="41" target="22">
       <data key="d11">officer</data>
       <data key="d12">vice_presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="48" target="76">
+    <edge source="41" target="68">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="48" target="73">
+    <edge source="41" target="65">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">1000.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="48" target="78">
+    <edge source="41" target="70">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="48" target="81">
+    <edge source="41" target="73">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="27" target="61">
+    <edge source="22" target="54">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="27" target="62">
+    <edge source="22" target="55">
       <data key="d11">officer</data>
-      <data key="d12">director</data>
+      <data key="d12">CFO</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="27" target="63">
+    <edge source="22" target="56">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="50" target="35">
+    <edge source="43" target="31">
       <data key="d11">officer</data>
       <data key="d12">secretario</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="50" target="25">
+    <edge source="43" target="20">
       <data key="d11">officer</data>
       <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="50" target="26">
+    <edge source="43" target="21">
       <data key="d11">officer</data>
       <data key="d12">tesorero</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="26" target="56">
+    <edge source="21" target="49">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="26" target="57">
+    <edge source="21" target="50">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="26" target="58">
+    <edge source="21" target="51">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="26" target="59">
+    <edge source="21" target="52">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="26" target="60">
+    <edge source="21" target="53">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="57" target="30">
+    <edge source="50" target="25">
       <data key="d11">officer</data>
       <data key="d12">secretario</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="57" target="73">
+    <edge source="50" target="65">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="57" target="74">
+    <edge source="50" target="66">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="57" target="75">
+    <edge source="50" target="67">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="57" target="76">
+    <edge source="50" target="68">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="57" target="77">
+    <edge source="50" target="69">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">500.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="57" target="78">
+    <edge source="50" target="70">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2800.0</data>
       <data key="d15">2020</data>
     </edge>
-    <edge source="57" target="79">
+    <edge source="50" target="71">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="57" target="80">
+    <edge source="50" target="72">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">1000.0</data>
       <data key="d15">2023</data>
     </edge>
-    <edge source="57" target="81">
+    <edge source="50" target="73">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2500.0</data>
       <data key="d15">2022</data>
     </edge>
-    <edge source="57" target="82">
+    <edge source="50" target="74">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">1000.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="57" target="83">
+    <edge source="50" target="75">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">3100.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="30" target="63">
+    <edge source="25" target="56">
       <data key="d11">incorporator</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="30" target="70">
+    <edge source="25" target="62">
       <data key="d11">agent</data>
       <data key="d12" />
       <data key="d13">10</data>
     </edge>
-    <edge source="30" target="71">
+    <edge source="25" target="63">
       <data key="d11">officer</data>
       <data key="d12">presidente</data>
       <data key="d13">10</data>
     </edge>
-    <edge source="66" target="86">
+    <edge source="59" target="78">
       <data key="d11">donation</data>
       <data key="d13">10</data>
       <data key="d14">2000.0</data>
       <data key="d15">2024</data>
     </edge>
-    <edge source="67" target="36">
-      <data key="d11">officer</data>
-      <data key="d12">secretario</data>
-      <data key="d13">10</data>
-    </edge>
-    <edge source="90" target="97">
+    <edge source="82" target="89">
       <data key="d11">dirige</data>
     </edge>
-    <edge source="95" target="124">
-      <data key="d11">dirige</data>
-    </edge>
-    <edge source="97" target="98">
+    <edge source="87" target="116">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="100">
+    <edge source="89" target="90">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="102">
+    <edge source="89" target="92">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="104">
+    <edge source="89" target="94">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="106">
+    <edge source="89" target="96">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="109">
+    <edge source="89" target="98">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="111">
+    <edge source="89" target="101">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="112">
+    <edge source="89" target="103">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="114">
+    <edge source="89" target="105">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="116">
+    <edge source="89" target="107">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="118">
+    <edge source="89" target="109">
       <data key="d11">position</data>
     </edge>
-    <edge source="97" target="120">
+    <edge source="89" target="111">
       <data key="d11">position</data>
     </edge>
-    <edge source="98" target="99">
+    <edge source="89" target="112">
+      <data key="d11">position</data>
+    </edge>
+    <edge source="90" target="91">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2024-12-31</data>
     </edge>
-    <edge source="100" target="101">
+    <edge source="92" target="93">
       <data key="d11">is</data>
       <data key="d18">2024-01-01</data>
       <data key="d19">2024-12-03</data>
     </edge>
-    <edge source="102" target="103">
+    <edge source="94" target="95">
       <data key="d11">is</data>
       <data key="d18">??</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="104" target="105">
+    <edge source="96" target="97">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="106" target="107">
+    <edge source="98" target="99">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="106" target="108">
+    <edge source="98" target="100">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="107" target="125" />
-    <edge source="108" target="111" />
-    <edge source="108" target="118" />
-    <edge source="108" target="125" />
+    <edge source="100" target="103" />
+    <edge source="100" target="116" />
+    <edge source="101" target="102">
+      <data key="d11">is</data>
+      <data key="d18">2021-01-01</data>
+      <data key="d19">2023-12-31</data>
+    </edge>
+    <edge source="103" target="104">
+      <data key="d11">is</data>
+      <data key="d18">2021-01-01</data>
+      <data key="d19">2023-12-31</data>
+    </edge>
+    <edge source="105" target="106">
+      <data key="d11">is</data>
+      <data key="d18">2021-01-01</data>
+      <data key="d19">2023-12-31</data>
+    </edge>
+    <edge source="107" target="108">
+      <data key="d11">is</data>
+      <data key="d18">2021-01-01</data>
+      <data key="d19">2023-12-31</data>
+    </edge>
     <edge source="109" target="110">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
@@ -1524,38 +1472,20 @@
       <data key="d18">2021-01-01</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="114" target="115">
+    <edge source="112" target="114">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2023-12-31</data>
     </edge>
-    <edge source="116" target="117">
-      <data key="d11">is</data>
-      <data key="d18">2021-01-01</data>
-      <data key="d19">2023-12-31</data>
-    </edge>
-    <edge source="118" target="119">
-      <data key="d11">is</data>
-      <data key="d18">2021-01-01</data>
-      <data key="d19">2023-12-31</data>
-    </edge>
-    <edge source="120" target="121">
-      <data key="d11">is</data>
-      <data key="d18">2021-01-01</data>
-      <data key="d19">2023-12-31</data>
-    </edge>
-    <edge source="120" target="122">
-      <data key="d11">is</data>
-      <data key="d18">2021-01-01</data>
-      <data key="d19">2023-12-31</data>
-    </edge>
-    <edge source="120" target="123">
+    <edge source="112" target="115">
       <data key="d11">is</data>
       <data key="d18">2021-01-01</data>
       <data key="d19">2022-04-22</data>
     </edge>
-    <edge source="124" target="125">
-      <data key="d11">position</data>
+    <edge source="116" target="117">
+      <data key="d11">is</data>
+      <data key="d18">2023-11-12</data>
+      <data key="d19">2024-03-12</data>
     </edge>
   </graph>
 </graphml>
