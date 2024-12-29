@@ -1,6 +1,6 @@
 {
   "short_name": "pulpo-o-o",
-  "name": "Una aplicación de visulización de grafos",
+  "name": "Una aplicación de visualización de grafos",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
