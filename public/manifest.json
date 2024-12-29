@@ -1,6 +1,6 @@
 {
   "short_name": "pulpo-o-o",
-  "name": "A web application for network visualization",
+  "name": "Una aplicación de visulización de grafos",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
