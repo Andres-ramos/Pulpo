@@ -38,6 +38,7 @@ import NodeSizeCaption from "./NodeSizeCaption";
 import LeftPanel from "./LeftPanel";
 import { ModalName, MODALS } from "./modals";
 import Header from "./Header";
+import Modal from "../components/Modal";
 
 const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const [data, setData] = useState<Data | null>(null);
   const rawNavState = useMemo(() => queryURLToNavState(location.search), [location.search]);
 
-  const [modalName, setModalName] = useState<ModalName | undefined>(undefined);
+  const [modalName, setModalName] = useState<ModalName | undefined>("disclaimer");
   const [panel, setPanel] = useState<Panel>(rawNavState.role === "d" ? "edit" : "main");
   const [panelExpanded, setPanelExpanded] = useState(!embed);
   const url = useMemo(() => rawNavState.url, [rawNavState]);
@@ -235,6 +236,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
       }}
     >
       <main className={cx("graph-view", panelExpanded ? "expanded" : "collapsed")} ref={domRoot}>
+
         <Header />
         <div className="wrapper">
           <LeftPanel />
@@ -273,7 +275,7 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
       </main>
 
       {/* Currently opened modal: */}
-      {modalName && createElement(MODALS[modalName], { close: () => setModalName(undefined) })}
+      {modalName && createElement(MODALS["disclaimer"], { close: () => setModalName(undefined) })}
     </GraphContext.Provider>
   );
 };
