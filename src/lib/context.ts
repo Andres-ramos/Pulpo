@@ -35,6 +35,9 @@ export const GraphContext = createContext<{
   panel: Panel;
   setPanel: (panel: Panel) => void;
 
+  panelExpanded: boolean;
+  setPanelExpanded: (panelExpanded: boolean) => void;
+
   modal: ModalName | undefined;
   openModal: (modal: ModalName) => void;
   closeModal: () => void;
@@ -69,6 +72,9 @@ export const GraphContext = createContext<{
 
     panel: "main",
     setPanel: noop,
+
+    panelExpanded: false,
+    setPanelExpanded: noop,
 
     modal: undefined,
     openModal: noop,
