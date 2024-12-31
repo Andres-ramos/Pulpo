@@ -6,7 +6,7 @@ import { GraphContext } from "../lib/context";
 
 
 const EventsController = ({}) => {
-  const { setHovered, navState, setNavState } = useContext(GraphContext);
+  const { setHovered, navState, setNavState, panelExpanded, setPanelExpanded } = useContext(GraphContext);
   const registerEvents = useRegisterEvents();
 
   useEffect(() => {
@@ -19,10 +19,13 @@ const EventsController = ({}) => {
       },
       clickNode({ node }) {
         setNavState({ ...navState, selectedNode: navState.selectedNode === node ? undefined : node });
+        // Opens panel if panel was closed
+        setPanelExpanded((v) => v ? !v : v )
       },
       clickStage() {
         if (navState.selectedNode) setNavState({ ...navState, selectedNode: undefined });
       },
+      
     })
   }, [registerEvents, setHovered, navState, setNavState]);
   return null;

@@ -229,6 +229,9 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
 
         panel,
         setPanel,
+        
+        panelExpanded, 
+        setPanelExpanded,
 
         sigma,
         setSigma,
