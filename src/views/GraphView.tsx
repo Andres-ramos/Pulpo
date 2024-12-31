@@ -235,9 +235,9 @@ const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
         root: domRoot.current || undefined,
       }}
     >
-      <main className={cx("graph-view", panelExpanded ? "expanded" : "collapsed")} ref={domRoot}>
+      <main className={cx("graph-view", panelExpanded ? "collapsed" : "expanded")} ref={domRoot}>
 
-        <Header />
+        {/* <Header /> */}
         <div className="wrapper">
           <LeftPanel />
           <section className="graph">
