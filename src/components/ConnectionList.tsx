@@ -41,12 +41,20 @@ export const ConnectionList = ({visibleNeighbors, node}: any) => {
                 />
                 <div>
                   <Node link node={neighbor} className="text-ellipsis" attributes={graph.getNodeAttributes(neighbor)}/>
-                  <h5 > {textMap[graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.label]} </h5>
-                  <h6>
-                    {textMap[graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.sub_type]}
-                  </h6>
+                  <h5 > 
+                    {textMap[graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.label]} - 
+                    {textMap[graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.sub_type] && (
+                      <p> - {textMap[graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.sub_type]}</p>
+                      )} </h5>
+
                 </div>
-               
+                  <div>
+                    {graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.amount && (
+                      <div>
+                        {graph.getEdgeAttributes(graph.edges(neighbor, node)).attributes.amount}
+                      </div>
+                    )}
+                  </div>
               </div>
             
           </li>
