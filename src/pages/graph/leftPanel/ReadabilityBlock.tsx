@@ -21,9 +21,9 @@ import {
   NODE_SIZE_RATIO_STEP,
   RANGE_STYLE,
   SLIDER_STYLE,
-} from "../lib/consts";
-import { GraphContext } from "../lib/context";
-import { NavState } from "../lib/navState";
+} from "../../../lib/consts";
+import { GraphContext } from "../../../lib/context";
+import { NavState } from "../../../lib/navState";
 
 const ReadabilityBlock: FC = () => {
   const { navState, setNavState } = useContext(GraphContext);

@@ -3,9 +3,9 @@ import { isEmpty } from "lodash";
 import React, { FC, useContext, useEffect, useState } from "react";
 import { DEFAULT_SETTINGS } from "sigma/settings";
 
-import { LoaderFill } from "../components/Loader";
-import { DEFAULT_LABEL_THRESHOLD } from "../lib/consts";
-import { GraphContext } from "../lib/context";
+import { LoaderFill } from "../../components/Loader";
+import { DEFAULT_LABEL_THRESHOLD } from "../../lib/consts";
+import { GraphContext } from "../../lib/context";
 import {
   applyEdgeColors,
   applyEdgeDirections,
@@ -16,9 +16,9 @@ import {
   applyNodeSubtitles,
   applyEdgeStyles,
   getReducers,
-} from "../lib/graph";
-import drawLabel, { drawHover } from "../utils/canvas";
-import { inputToStateThreshold } from "../utils/threshold";
+} from "../../lib/graph";
+import drawLabel, { drawHover } from "../../utils/canvas";
+import { inputToStateThreshold } from "../../utils/threshold";
 
 const GraphAppearance: FC = () => {
   const { data, navState, computedData, setSigma, hovered } = useContext(GraphContext);

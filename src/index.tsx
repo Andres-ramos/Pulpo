@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import { AppContext } from "./lib/context";
 import "./styles/index.scss";
-import Root from "./views/Root";
+import Root from "./pages/Root";
 import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById("root") as HTMLElement).render(

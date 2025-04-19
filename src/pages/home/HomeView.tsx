@@ -4,11 +4,10 @@ import { AiOutlineCloud } from "react-icons/ai";
 import { RiComputerLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router";
 
-import DropInput from "../components/DropInput";
-import Footer from "../components/Footer";
-import { SAMPLE_DATASET_URI } from "../lib/consts";
-import { getErrorMessage } from "../lib/errors";
-import { useNotifications } from "../lib/notifications";
+// import Footer from "../components/Footer";
+import { SAMPLE_DATASET_URI } from "../../lib/consts";
+import { getErrorMessage } from "../../lib/errors";
+import { useNotifications } from "../../lib/notifications";
 import Header from "./Header"
 
 const HomeView: FC = () => {

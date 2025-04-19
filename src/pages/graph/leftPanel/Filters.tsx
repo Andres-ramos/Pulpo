@@ -9,14 +9,14 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import { MdBubbleChart } from "react-icons/md";
 import { RiFilterOffFill } from "react-icons/ri";
 
-import { RangeMetric, SearchMetrics, TermsMetric } from "../lib/computedData";
-import { MAX_PALETTE_SIZE, RANGE_STYLE } from "../lib/consts";
-import { GraphContext } from "../lib/context";
-import { ContentField, QualiField, QuantiField, getFilterableFields, getValue } from "../lib/data";
-import { Filter, RangeFilter, SearchFilter, TermsFilter } from "../lib/navState";
-import { getFontColor } from "../utils/color";
-import { shortenNumber } from "../utils/number";
-import { normalize } from "../utils/string";
+import { RangeMetric, SearchMetrics, TermsMetric } from "../../../lib/computedData";
+import { MAX_PALETTE_SIZE, RANGE_STYLE } from "../../../lib/consts";
+import { GraphContext } from "../../../lib/context";
+import { ContentField, QualiField, QuantiField, getFilterableFields, getValue } from "../../../lib/data";
+import { Filter, RangeFilter, SearchFilter, TermsFilter } from "../../../lib/navState";
+import { getFontColor } from "../../../utils/color";
+import { shortenNumber } from "../../../utils/number";
+import { normalize } from "../../../utils/string";
 
 const cleanValue = {
   "individual": "Individuo",

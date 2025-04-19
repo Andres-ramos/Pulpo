@@ -6,11 +6,11 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 import { RiFilterOffFill } from "react-icons/ri";
 import Linkify from "react-linkify";
 
-import { DEFAULT_LINKIFY_PROPS } from "../lib/consts";
-import { GraphContext } from "../lib/context";
-import { Data } from "../lib/data";
-import { cleanNavState, navStateToQueryURL } from "../lib/navState";
-import { saveFileFromURL } from "../utils/file";
+import { DEFAULT_LINKIFY_PROPS } from "../../../lib/consts";
+import { GraphContext } from "../../../lib/context";
+import { Data } from "../../../lib/data";
+import { cleanNavState, navStateToQueryURL } from "../../../lib/navState";
+import { saveFileFromURL } from "../../../utils/file";
 
 const GraphSumUp: FC = () => {
   const { origin, pathname } = window.location;

@@ -3,7 +3,7 @@ import { noop } from "lodash";
 import { createContext } from "react";
 import Sigma from "sigma";
 
-import { ModalName } from "../views/modals";
+import { ModalName } from "../pages/modals";
 import { ComputedData, getEmptyComputedData } from "./computedData";
 import { Data } from "./data";
 import { NavState } from "./navState";

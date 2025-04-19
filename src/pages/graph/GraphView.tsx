@@ -7,7 +7,7 @@ import Sigma from "sigma";
 import { Dimensions } from "sigma/types";
 import GraphControls from "./GraphControls";
 
-import { LoaderFill } from "../components/Loader";
+import { LoaderFill } from "../../components/Loader";
 import {
   ComputedData,
   getEdgeSizes,
@@ -15,10 +15,10 @@ import {
   getMetrics,
   getNodeColors,
   getNodeSizes,
-} from "../lib/computedData";
-import { BASE_SIGMA_SETTINGS } from "../lib/consts";
-import { GraphContext, Panel } from "../lib/context";
-import { Data, enrichData, loadGraphFile, loadGraphURL, prepareGraph, readGraph } from "../lib/data";
+} from "../../lib/computedData";
+import { BASE_SIGMA_SETTINGS } from "../../lib/consts";
+import { GraphContext, Panel } from "../../lib/context";
+import { Data, enrichData, loadGraphFile, loadGraphURL, prepareGraph, readGraph } from "../../lib/data";
 import {
   BAD_FILE,
   BAD_URL,
@@ -27,18 +27,18 @@ import {
   UNKNOWN,
   getErrorMessage,
   getReportNotification,
-} from "../lib/errors";
+} from "../../lib/errors";
 // import { applyGraphStyle } from "../lib/graph";
-import { NavState, cleanNavState, guessNavState, navStateToQueryURL, queryURLToNavState } from "../lib/navState";
+import { NavState, cleanNavState, guessNavState, navStateToQueryURL, queryURLToNavState } from "../../lib/navState";
 import EventsController from "./EventsController";
 import GraphAppearance from "./GraphAppearance";
-import { applyGraphStyle } from "../lib/graph";
-import { hiddenReducer } from "../lib/consts";
+import { applyGraphStyle } from "../../lib/graph";
+import { hiddenReducer } from "../../lib/consts";
 import NodeSizeCaption from "./NodeSizeCaption";
-import LeftPanel from "./LeftPanel";
-import { ModalName, MODALS } from "./modals";
-import Header from "./Header";
-import Modal from "../components/Modal";
+import LeftPanel from "./leftPanel/LeftPanel";
+import { ModalName, MODALS } from "../modals";
+import Header from "../home/Header";
+import Modal from "../../components/Modal";
 
 const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
   const navigate = useNavigate();

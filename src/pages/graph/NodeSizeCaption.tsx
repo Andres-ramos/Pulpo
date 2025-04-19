@@ -1,8 +1,8 @@
 import { useSigma } from "@react-sigma/core";
 import { FC, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-import { GraphContext } from "../lib/context";
-import { shortenNumber } from "../utils/number";
+import { GraphContext } from "../../lib/context";
+import { shortenNumber } from "../../utils/number";
 
 const NodeSizeCaption: FC = () => {
   const { navState, data, computedData } = useContext(GraphContext);

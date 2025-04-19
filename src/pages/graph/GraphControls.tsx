@@ -10,11 +10,11 @@ import { OptionProps } from "react-select";
 import AsyncSelect from "react-select/async";
 import { Coordinates } from "sigma/types";
 
-import Node from "../components/Node";
-import { ANIMATION_DURATION, DEFAULT_SELECT_PROPS, MAX_OPTIONS, RETINA_FIELD_PREFIX } from "../lib/consts";
-import { AppContext, GraphContext } from "../lib/context";
-import { NodeData } from "../lib/data";
-import { normalize, slugify } from "../utils/string";
+import Node from "../../components/Node";
+import { ANIMATION_DURATION, DEFAULT_SELECT_PROPS, MAX_OPTIONS, RETINA_FIELD_PREFIX } from "../../lib/consts";
+import { AppContext, GraphContext } from "../../lib/context";
+import { NodeData } from "../../lib/data";
+import { normalize, slugify } from "../../utils/string";
 import GraphFullScreenControl from "./GraphFullScreenControl";
 
 const TYPE_NODE = "node" as const;

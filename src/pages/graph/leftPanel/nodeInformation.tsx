@@ -1,6 +1,6 @@
 import Linkify from "react-linkify";
 import { map, startCase } from "lodash";
-import { DEFAULT_LINKIFY_PROPS } from "../../lib/consts";
+import { DEFAULT_LINKIFY_PROPS } from "../../../lib/consts";
 
 
 export const NodeInformation = ({nodeType, filteredAttributes}:any) => {

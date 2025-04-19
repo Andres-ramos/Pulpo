@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useContext, useEffect, useState } from "react";
 import { BsArrowsFullscreen, BsFullscreenExit } from "react-icons/bs";
 
-import { GraphContext } from "../lib/context";
+import { GraphContext } from "../../lib/context";
 
 function toggleFullScreen(dom: HTMLElement) {
   if (!document.fullscreenEnabled) return;

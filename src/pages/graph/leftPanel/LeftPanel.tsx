@@ -5,11 +5,10 @@ import { BsShare } from "react-icons/bs";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { MdOutlinePreview } from "react-icons/md";
 
-import { GraphContext } from "../lib/context";
-import EditorBlock from "./EditorBlock";
+import { GraphContext } from "../../../lib/context";
 import Filters from "./Filters";
 import GraphSumUp from "./GraphSumUp";
-import NodesAppearanceBlock from "./NodesAppearanceBlock";
+import NodesAppearanceBlock from "../../NodesAppearanceBlock";
 import ReadabilityBlock from "./ReadabilityBlock";
 import SelectedNodePanel from "./SelectedNodePanel";
 
@@ -26,9 +25,11 @@ const LeftPanel: FC = () => {
   let content: JSX.Element;
   // TODO: Figure out how content is determined from query params
   // r=d is what causes edit panel to open
-  if (panel === "edit" && navState.role === "d") {
-    content = <EditorBlock />;
-  } else if (panel === "readability") {
+  // if (panel === "edit" && navState.role === "d") {
+  //   // content = <EditorBlock />;
+    
+  // } 
+  if (panel === "readability") {
     content = <ReadabilityBlock />;
   } else if (selectedNode) {
     content = <SelectedNodePanel node={navState?.selectedNode as string} data={selectedNode} />;

@@ -6,15 +6,15 @@ import { FaTimes } from "react-icons/fa";
 import Linkify from "react-linkify";
 import { Coordinates } from "sigma/types";
 
-import Connection from "../components/Connection";
-import Node from "../components/Node";
-import { ANIMATION_DURATION, DEFAULT_LINKIFY_PROPS, isHiddenRetinaField, removeRetinaPrefix } from "../lib/consts";
-import { GraphContext } from "../lib/context";
-import { NodeData } from "../lib/data";
+import Connection from "../../../components/Connection";
+import Node from "../../../components/Node";
+import { ANIMATION_DURATION, DEFAULT_LINKIFY_PROPS, isHiddenRetinaField, removeRetinaPrefix } from "../../../lib/consts";
+import { GraphContext } from "../../../lib/context";
+import { NodeData } from "../../../lib/data";
 
-import {ConnectionList} from "../components/ConnectionList"
+import {ConnectionList} from "../../../components/ConnectionList"
 
-import {Profile} from "./profiles/Profile";
+import {Profile} from "./Profile";
 
 const HIDDEN_KEYS = new Set(["x", "y", "z", "size", "label", "color"]);
 
