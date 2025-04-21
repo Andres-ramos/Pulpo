@@ -18,15 +18,11 @@ import {
 } from "../../lib/computedData";
 import { BASE_SIGMA_SETTINGS } from "../../lib/consts";
 import { GraphContext, Panel } from "../../lib/context";
-import { Data, enrichData, loadGraphFile, loadGraphURL, prepareGraph, readGraph } from "../../lib/data";
+import { Data, enrichData, loadGraphFile, prepareGraph, readGraph } from "../../lib/data";
 import {
   BAD_FILE,
   BAD_URL,
-  MISSING_FILE,
-  MISSING_URL,
-  UNKNOWN,
   getErrorMessage,
-  getReportNotification,
 } from "../../lib/errors";
 // import { applyGraphStyle } from "../lib/graph";
 import { NavState, cleanNavState, guessNavState, navStateToQueryURL, queryURLToNavState } from "../../lib/navState";
@@ -37,7 +33,6 @@ import { hiddenReducer } from "../../lib/consts";
 import NodeSizeCaption from "./NodeSizeCaption";
 import LeftPanel from "./leftPanel/LeftPanel";
 import { ModalName, MODALS } from "../modals";
-import Header from "../home/Header";
 import Modal from "../../components/Modal";
 
 const GraphView: FC<{ embed?: boolean }> = ({ embed }) => {
