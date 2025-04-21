@@ -77,52 +77,45 @@ export function getEmptyComputedData(): ComputedData {
   };
 }
 
+// Node color logic writen in this layer
+// Edge styling and edge color written in next layer
 export function getNodeColors(
   { graph, fieldsIndex }: Data,
   { nodeColorField }: Pick<NavState, "nodeColorField">,
 ): Pick<ComputedData, "getColor" | "nodeColors"> {
+
   const result: Pick<ComputedData, "getColor" | "nodeColors"> = {};
-  if (typeof nodeColorField === "string") {
-    result.nodeColors = {};
-    const field = fieldsIndex[nodeColorField];
-    let getColor: ComputedData["getColor"] = null;
+  result.nodeColors = {};
+  const field = fieldsIndex[nodeColorField];
+  let getColor: ComputedData["getColor"] = null;
 
-    if (field.type === "quali") {
-      const values = sortBy(field.values, (v) => -v.count);
-      const colorsDict: Record<string, string> = {
-        "corporation": "#417AFB",
-        "individual": "#d7fb41",
-        "government_entity": "#D67FFC",
-        "politician": "#AD05F8",
-        "Junta de directores": "#BE35FA",
-        "Secretario": "#BE35FA",
-        "position": "#EEC9FE"
-      }
-
-      getColor = (value: any) => colorsDict[value];
-    } else if (field.type === "quanti") {
-      
-      const gradient = chroma.scale(GRADIENT).domain([0, 1]);
-      getColor = (value: any) =>
-        typeof value === "number" ? gradient((value - field.min) / (field.max - field.min)).hex() : DEFAULT_NODE_COLOR;
-    }
-
-    if (getColor) {
-      graph.forEachNode((node, nodeData) => {
-        result.nodeColors![node] = getColor!(getValue(nodeData, field));
-      });
-
-      result.getColor = getColor;
-    }
+  // TODO: Put colors in const file
+  const colorsDict: Record<string, string> = {
+    "corporation": "#417AFB",
+    "individual": "#d7fb41",
+    "government_entity": "#D67FFC",
+    "politician": "#AD05F8",
+    "Junta de directores": "#BE35FA",
+    "Secretario": "#BE35FA",
+    "position": "#EEC9FE"
   }
+  getColor = (value: any) => colorsDict[value];
+  graph.forEachNode((node, nodeData) => {
+    result.nodeColors![node] = getColor!(getValue(nodeData, field));
+  });
+
+  result.getColor = getColor;
+
   return result;
 }
+
 
 export function getNodeSizes(
   { graph, fieldsIndex }: Data,
   { nodeSizeField, nodeSizeRatio }: NavState,
   { width, height }: Dimensions,
 ): Pick<ComputedData, "getSize" | "nodeSizes" | "nodeSizeExtents"> {
+
   let nodeSizes: ComputedData["nodeSizes"];
   let getSize: ComputedData["getSize"] = null;
   let nodeSizeExtents: ComputedData["nodeSizeExtents"] = [0, Infinity];
@@ -131,48 +124,28 @@ export function getNodeSizes(
   const screenSizeRatio = Math.min(width, height) / 1000;
   const graphSizeRatio = 1 / Math.log10(graph.order + 2);
 
-  if (typeof nodeSizeField === "string") {
-    nodeSizes = {};
-    const field = fieldsIndex[nodeSizeField];
-
-    if (field.type === "quanti") {
-      
-      const getSize = (value: any, nodeData: any): number => {
-        if (nodeData.label === "ASES" || nodeData.label === "ASSMCA"){
-          return 20;
-        } else {
-          const size =
-            typeof value === "number"
-              ? ((NODE_SIZE_MAX - NODE_SIZE_MIN) * (value - field.min)) / (field.max - field.min) + NODE_SIZE_MIN
-              : NODE_DEFAULT_SIZE;
-          return size * ratio * screenSizeRatio * graphSizeRatio;
-        }
-        
-      };
-
-      graph.forEachNode((node, nodeData) => {
-        nodeSizes![node] = getSize!(getValue(nodeData, field), nodeData);
-      });
-      nodeSizeExtents = [field.min, field.max];
-    }
-  } else {
-    nodeSizes = {};
-    const values = graph.mapNodes((node, attributes) => attributes.rawSize);
-    nodeSizeExtents = [min(values) as number, max(values) as number];
-    graph.forEachNode((node, { rawSize }) => {
-      nodeSizes[node] =
-        (((NODE_SIZE_MAX - NODE_SIZE_MIN) * (rawSize - nodeSizeExtents[0])) /
-          (nodeSizeExtents[1] - nodeSizeExtents[0]) +
-          NODE_SIZE_MIN) *
-        ratio *
-        screenSizeRatio *
-        graphSizeRatio;
-    });
-  }
-
-  if (nodeSizeExtents[0] === nodeSizeExtents[1]) nodeSizeExtents[0] = 0;
-
+  nodeSizes = {};
+  const field = fieldsIndex[nodeSizeField];
+  // TODO: This can be made much better
+  const foo = (value: any, nodeData: any): number => {
+    // Hardcoded for government agencies
+    if (nodeData.label === "ASES" || nodeData.label === "ASSMCA"){
+      return 20;
+    } else {
+      // Otherwise this
+      const size =
+        typeof value === "number"
+          ? ((NODE_SIZE_MAX - NODE_SIZE_MIN) * (value - field.min)) / (field.max - field.min) + NODE_SIZE_MIN
+          : NODE_DEFAULT_SIZE;
+      return size * ratio * screenSizeRatio * graphSizeRatio;
+    } 
+  };
+  graph.forEachNode((node, nodeData) => {
+    nodeSizes![node] = foo!(getValue(nodeData, field), nodeData);
+  });
+  nodeSizeExtents = [field.min, field.max];
   return { getSize, nodeSizes, nodeSizeExtents };
+
 }
 
 export function getEdgeSizes(
@@ -204,6 +177,7 @@ export function getEdgeSizes(
   return { edgeSizes, edgeSizeExtents };
 }
 
+// TODO: Figure out que hace esto
 export function getMetrics(
   data: Data,
   navState: Pick<NavState, "filters" | "filterable" | "colorable" | "sizeable">,

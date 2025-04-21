@@ -78,8 +78,9 @@ const GraphAppearance: FC = () => {
     applyNodeSubtitles(data, { subtitleFields });
   }, [sigma, data, subtitleFields]);
 
+  // Doesn't use navstate or computedData
   useEffect(() => {
-    applyEdgeColors(data, { nodeColors }, { edgeColoring });
+    applyEdgeColors(data);
   }, [sigma, data, nodeColors, edgeColoring]);
 
   useEffect(() => {
@@ -90,6 +91,7 @@ const GraphAppearance: FC = () => {
     applyEdgeSizes(data, { edgeSizes }, { edgeSizeRatio });
   }, [sigma, data, edgeSizes, edgeSizeRatio]);
 
+  // Doesn't use navstate or computedData
   useEffect(() => {
     applyEdgeStyles(data);
   }, [sigma, data])

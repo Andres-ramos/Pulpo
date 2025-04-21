@@ -183,7 +183,7 @@ const GraphControls: FC = () => {
         } else if (ratio > 0) {
           sigma.getCamera().animatedZoom({ duration: ANIMATION_DURATION, factor: 1.5 });
         } else if (ratio < 0) {
-          sigma.getCamera().animatedUnzoom({ duration: ANIMATION_DURATION, factor: 1.5 });
+          sigma.getCamera().animatedUnzoom({ duration: 1000, factor: 1.5 });
         }
       }
     },

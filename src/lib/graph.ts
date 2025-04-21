@@ -13,6 +13,7 @@ import {
   HIGHLIGHTED_EDGE_SIZE_RATIO,
   HIGHLIGHTED_NODE_COLOR,
 } from "./consts";
+
 import { Data, EdgeData, NodeData, getValue } from "./data";
 import { NavState } from "./navState";
 
@@ -71,10 +72,9 @@ export function applyNodeSubtitles({ graph, fieldsIndex }: Data, { subtitleField
   );
 }
 
+// Apply edge colors no usa computed data
 export function applyEdgeColors(
   { graph }: Data,
-  { nodeColors }: Pick<ComputedData, "nodeColors">,
-  { edgeColoring }: Pick<NavState, "edgeColoring">,
 ) {
 
   const getColor = (edge: string, data:any):any => {
@@ -91,7 +91,7 @@ export function applyEdgeColors(
     }
     return colorMap[data.attributes.label]
   };
-  graph.forEachEdge((edge, data) => graph.setEdgeAttribute(edge, "color", getColor(edge, data)));
+  graph.forEachEdge((edge, data) => graph.setEdgeAttribute(edge, "color", "#3c4b02"));
 }
 
 export function applyEdgeDirections({ graph }: Data, { edgeDirection }: Pick<NavState, "edgeDirection">) {
@@ -120,8 +120,10 @@ export function applyEdgeSizes(
   { edgeSizes }: Pick<ComputedData, "edgeSizes">,
   { edgeSizeRatio }: Pick<NavState, "edgeSizeRatio">,
 ) {
+  // Antes esta logica se aplicaba a partir de lo que se extrajo dinamicamente
+  // En este caso lo cambie para que la logica del styling este aqui tambien
   const ratio = typeof edgeSizeRatio === "number" ? edgeSizeRatio : DEFAULT_EDGE_SIZE_RATIO;
-  const getEdgeSize = (edge:string , data: any): any => {    
+  const getEdgeSize = (edge:string , data: any): any => {   
     const sizeMap = {
       "officer": 1,
       "agent": 1,
@@ -133,7 +135,7 @@ export function applyEdgeSizes(
 
   }
   graph.forEachEdge((edge, data) =>
-    graph.setEdgeAttribute(edge, "size", getEdgeSize(edge, data)),
+    graph.setEdgeAttribute(edge, "size", 1),
   );
 }
 
@@ -142,13 +144,17 @@ export function applyEdgeStyles(
 ) {
 
   const m = {
-    "contract": "curved",
-    "donation": "curved",
+    "contract": "straight",
+    "donation": "straight",
     "officer": "straight",
     "incorporator": "straight",
-    "agent": "straight"
+    "agent": "straight",
+    "is": "straight",
+    "position": "straight",
+    "dirige": "straight"
   }
   graph.forEachEdge((edge, data) =>{
+    console.log(data.attributes)
     graph.setEdgeAttribute(edge, "type", m[data.attributes.label])
   })
 }
@@ -158,7 +164,7 @@ export function applyGraphStyle(data: Data, computedData: ComputedData, navState
   applyNodeSizes(data, computedData, navState);
   applyNodeLabelSizes(data, computedData, navState);
   applyNodeSubtitles(data, navState);
-  applyEdgeColors(data, computedData, navState);
+  applyEdgeColors(data);  //Doesn't use nav state or computed data
   applyEdgeDirections(data, navState);
   applyEdgeSizes(data, computedData, navState);
 }
